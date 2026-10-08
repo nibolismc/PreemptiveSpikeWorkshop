@@ -1,0 +1,9 @@
+replaceitem entity @a hotbar.0 minecraft:air 1
+replaceitem entity @a hotbar.1 minecraft:air 1
+replaceitem entity @a hotbar.2 minecraft:air 1
+replaceitem entity @a hotbar.3 minecraft:air 1
+replaceitem entity @a hotbar.4 minecraft:air 1
+replaceitem entity @a hotbar.5 minecraft:air 1
+replaceitem entity @a hotbar.6 minecraft:air 1
+replaceitem entity @a hotbar.7 minecraft:air 1
+replaceitem entity @a hotbar.8 minecraft:air 1

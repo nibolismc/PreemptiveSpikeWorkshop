@@ -1,0 +1,2 @@
+execute as @a run bossbar set practice:chests_front name [{"text":"Chests in front: ","color":"gold"},{"score":{"name":"@s","objective":"chests_in_front"},"color":"white"}]
+execute as @a run bossbar set practice:chests_behind name [{"text":"Chests behind: ","color":"gold"},{"score":{"name":"@s","objective":"chests_behind"},"color":"white"}]

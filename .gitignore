@@ -1,0 +1,13 @@
+
+data/raids.dat
+/DIM-1
+/DIM1
+level.dat_old
+/playerdata
+/speedrunigt
+session.lock
+standardoptions.txt
+/stats
+/advancements
+/.releases
+make_release.py
