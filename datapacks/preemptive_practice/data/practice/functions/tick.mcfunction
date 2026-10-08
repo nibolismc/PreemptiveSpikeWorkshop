@@ -71,15 +71,39 @@ execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name
 execute as @e[type=item,nbt={Item:{id:"minecraft:black_banner",tag:{display:{Name:'{"text":"Back","color":"gray","italic":false}'}}}}] at @s if entity @p[distance=..2] run function practice:drop/back
 execute as @e[type=item,nbt={Item:{id:"minecraft:black_banner",tag:{display:{Name:'{"text":"Back","color":"gray","italic":false}'}}}}] at @s if entity @p[distance=..2] run kill @s
 
+
+# CHEST HOTBAR
+
+# -1
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"-1","color":"red","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 1..3 run function practice:drop/minus_one
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"-1","color":"red","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 1..3 run kill @s
+
+# +1
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"+1","color":"green","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 1..3 run function practice:drop/plus_one
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"+1","color":"green","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 1..3 run kill @s
+
+# Back
+execute as @e[type=item,nbt={Item:{id:"minecraft:black_banner",tag:{display:{Name:'{"text":"Back","color":"gray","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 1..3 run function practice:drop/back
+execute as @e[type=item,nbt={Item:{id:"minecraft:black_banner",tag:{display:{Name:'{"text":"Back","color":"gray","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 1..3 run kill @s
+
 #HOTBAR INDEX
 
 execute as @a[scores={hotbar_index=0}] run function practice:hotbar/empty
 execute as @a[scores={hotbar_index=1}] run function practice:hotbar/default
 execute as @a[scores={hotbar_index=2}] run function practice:hotbar/spawner
-execute as @a[scores={hotbar_index=3}] run function practice:hotbar/chest
+execute as @a[scores={hotbar_index=3}] run function practice:hotbar/numbers
+execute as @a[scores={hotbar_index=4}] run function practice:hotbar/quiz_default
+execute as @a[scores={hotbar_index=5}] run function practice:hotbar/quiz_settings
+execute as @a[scores={hotbar_index=6}] run function practice:hotbar/numbers
+execute as @a[scores={hotbar_index=7}] run function practice:hotbar/quiz_game
+execute as @a[scores={hotbar_index=8}] run function practice:hotbar/spawner
+execute as @a[scores={hotbar_index=9}] run function practice:hotbar/numbers
 
 #during spikecheck
 execute as @a[scores={hotbar_index=1..3}] run function practice:place_starterstaircase
+
+#during spikecheck
+execute as @a[scores={hotbar_index=4..}] run function practice:place_starterstaircase_quiz
 
 #lobby on death
 execute as @a[scores={deaths=1..}] run function practice:lobby
@@ -94,15 +118,7 @@ execute as @a[scores={actionbar=3}] run title @s actionbar {"text":"Chests behin
 
 #DONT PLACE BLOCKS
 
-execute as @a[scores={placed_chest=1..}] run function practice:place_starterstaircase
-execute as @a[scores={placed_spawner=1..}] run function practice:place_starterstaircase
-execute as @a[scores={placed_ender=1..}] run function practice:place_starterstaircase
-execute as @a[scores={placed_door=1..}] run function practice:place_starterstaircase
-execute as @a[scores={placed_banner=1..}] run function practice:place_starterstaircase
-execute as @a[scores={placed_head=1..}] run function practice:place_starterstaircase
 execute as @a[scores={placed_head=1..}] run tellraw @a [{"text":"[Warning]","color":"yellow","bold":true},{"text":" Placing some player heads makes the game lag and can cause it to crash!","color":"gray","bold":false}]
-execute as @a[scores={placed_skeleton=1..}] run function practice:place_starterstaircase
-execute as @a[scores={placed_zombie=1..}] run function practice:place_starterstaircase
 
 scoreboard players set @a placed_chest 0
 scoreboard players set @a placed_spawner 0
