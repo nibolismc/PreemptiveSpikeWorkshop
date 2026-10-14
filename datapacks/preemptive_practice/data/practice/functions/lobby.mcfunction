@@ -6,6 +6,14 @@ scoreboard players set @a actionbar 0
 bossbar set practice:chests_front visible false
 bossbar set practice:mob_spawner visible false
 bossbar set practice:chests_behind visible false
+bossbar set practice:number_of_rounds visible false
+bossbar set practice:round visible false
 
 
 scoreboard players set @a deaths 0
+
+bossbar set practice:chests_front players @a
+bossbar set practice:mob_spawner players @a
+bossbar set practice:chests_behind players @a
+bossbar set practice:number_of_rounds players @a
+bossbar set practice:round players @a
