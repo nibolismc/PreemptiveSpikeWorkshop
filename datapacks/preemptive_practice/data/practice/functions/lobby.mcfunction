@@ -1,5 +1,5 @@
-tp @a -594.51 40.00 1921.55 540.08 1.90
-playsound minecraft:ui.toast.out player @a -594.51 40.00 1921.55 10
+tp @a -594.51 39.00 1921.55 540.08 1.90
+playsound minecraft:ui.toast.out player @a -594.51 39.00 1921.55 10
 scoreboard players set @a hotbar_index 0
 scoreboard players set @a actionbar 0
 

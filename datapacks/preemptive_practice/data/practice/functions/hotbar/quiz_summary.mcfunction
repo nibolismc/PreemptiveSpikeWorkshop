@@ -1,7 +1,9 @@
-replaceitem entity @a hotbar.0 minecraft:green_terracotta{display:{Name:'{"text":"Enabled","color":"dark_green","italic":false}'}} 1
-replaceitem entity @a hotbar.1 minecraft:air 1
-replaceitem entity @a hotbar.2 minecraft:air 1
-replaceitem entity @a hotbar.3 minecraft:air 1
+replaceitem entity @a hotbar.0 minecraft:lime_terracotta{display:{Name:'{"text":"Enabled","color":"green","italic":false}'}} 1
+
+execute if score #enabled summary_state matches 1 run replaceitem entity @a hotbar.1 minecraft:air 1
+execute if score #enabled summary_state matches 1 run replaceitem entity @a hotbar.2 minecraft:air 1
+execute if score #enabled summary_state matches 1 run replaceitem entity @a hotbar.3 minecraft:air 1
+
 replaceitem entity @a hotbar.4 minecraft:air 1
 replaceitem entity @a hotbar.5 minecraft:air 1
 replaceitem entity @a hotbar.6 minecraft:air 1

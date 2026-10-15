@@ -1,9 +1,9 @@
-replaceitem entity @s hotbar.0 minecraft:chest{display:{Name:'{"text":"Chests in front","color":"gold","italic":false}'}} 1
-replaceitem entity @s hotbar.1 minecraft:spawner{display:{Name:'{"text":"Mob spawner","color":"aqua","italic":false}'}} 1
-replaceitem entity @s hotbar.2 minecraft:ender_chest{display:{Name:'{"text":"Chests behind","color":"gold","italic":false}'}} 1
+replaceitem entity @s hotbar.0 minecraft:lime_concrete{display:{Name:'{"text":"Real","color":"green","italic":false}'}} 1
+replaceitem entity @s hotbar.1 minecraft:red_concrete{display:{Name:'{"text":"Fake","color":"red","italic":false}'}} 1
+replaceitem entity @s hotbar.2 minecraft:air 1
 replaceitem entity @s hotbar.3 minecraft:air 1
-replaceitem entity @s hotbar.4 minecraft:lime_concrete{display:{Name:'{"text":"Submit","color":"green","italic":false}'}} 1
+replaceitem entity @s hotbar.4 minecraft:air 1
 replaceitem entity @s hotbar.5 minecraft:air 1
 replaceitem entity @s hotbar.6 minecraft:air 1
 replaceitem entity @s hotbar.7 minecraft:air 1
-replaceitem entity @s hotbar.8 minecraft:red_concrete{display:{Name:'{"text":"Quit","color":"red","italic":false}'}} 1
+replaceitem entity @a hotbar.8 minecraft:red_banner{HideFlags:32,display:{Name:'{"text":"Quit","color":"red","italic":false}'},BlockEntityTag:{Patterns:[{Pattern:mr,Color:0},{Pattern:vhr,Color:0},{Pattern:br,Color:14},{Pattern:tr,Color:14},{Pattern:tts,Color:14},{Pattern:bts,Color:14},{Pattern:bo,Color:14}]}} 1
