@@ -4,7 +4,9 @@ scoreboard players set @a hotbar_index 4
 
 #bossbar
 bossbar set practice:number_of_rounds players @a
+bossbar set practice:round players @a
 
 bossbar set practice:number_of_rounds visible true
+bossbar set practice:round visible false
 
 function practice:updatebossbar

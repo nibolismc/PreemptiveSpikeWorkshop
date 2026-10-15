@@ -16,5 +16,6 @@ execute as @a[scores={quiz_spawner_idx=4}] if score #state corr_answer matches 1
 execute as @a[scores={quiz_spawner_idx=5}] if score #state corr_answer matches 1 run tellraw @s ["",{"text":"Answer:\n\n","color":"yellow","underlined":"true"},{"text":"  Chests in front: ","color":"white"},{"score":{"name":"@s","objective":"quiz_front_idx"},"color":"gold"},{"text":"\n  Spawner:          ","color":"white"},{"text":"None","color":"gray"},{"text":"\n  Chests behind:   ","color":"white"},{"score":{"name":"@s","objective":"quiz_beh_idx"},"color":"gold"}]
 execute as @a if score #state corr_answer matches 1 run tellraw @s [{"text":" "}]
 
-execute as @a if score @s current_round = @s number_of_rounds run function practice:drop/quiz_quit
-execute as @a unless score @s current_round = @s number_of_rounds run function practice:quiz/quiz_new_round
+execute as @a[scores={number_of_rounds=101}] run function practice:quiz/quiz_new_round
+execute as @a[scores={number_of_rounds=..100}] if score @s current_round = @s number_of_rounds run function practice:drop/quiz_quit
+execute as @a[scores={number_of_rounds=..100}] unless score @s current_round = @s number_of_rounds run function practice:quiz/quiz_new_round

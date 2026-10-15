@@ -5,10 +5,9 @@ execute as @a[scores={hotbar_index=3,chest_index=1,chests_behind=..7}] run score
 
 function practice:add_chests
 
-
 execute as @a[scores={hotbar_index=6,number_of_rounds=100}] run scoreboard players set @a number_of_rounds 101
-
 execute as @a[scores={hotbar_index=6,number_of_rounds=..99}] run scoreboard players add @a number_of_rounds 1
 
+execute as @a[scores={hotbar_index=6}] store result bossbar practice:round value run scoreboard players get @s number_of_rounds
 
 function practice:updatebossbar

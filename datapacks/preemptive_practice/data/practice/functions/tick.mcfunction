@@ -84,8 +84,8 @@ execute as @e[type=item,nbt={Item:{id:"minecraft:hopper_minecart",tag:{display:{
 execute as @e[type=item,nbt={Item:{id:"minecraft:hopper_minecart",tag:{display:{Name:'{"text":"Settings","italic":false}'}}}}] at @s run kill @s
 
 # Drop for info
-execute as @e[type=item,nbt={Item:{id:"minecraft:book"}}] at @s if score @p[distance=..2] hotbar_index matches 4 run function practice:drop/info
-execute as @e[type=item,nbt={Item:{id:"minecraft:book"}}] at @s if score @p[distance=..2] hotbar_index matches 4 run kill @s
+execute as @e[type=item,nbt={Item:{id:"minecraft:book"}}] at @s if score @p[distance=..2] hotbar_index matches 4..5 run function practice:drop/info
+execute as @e[type=item,nbt={Item:{id:"minecraft:book"}}] at @s if score @p[distance=..2] hotbar_index matches 4..5 run kill @s
 
 # Exit
 #execute as @e[type=item,nbt={Item:{id:"minecraft:oak_door",tag:{display:{Name:'{"text":"Exit","color":"red","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 0 run function practice:drop/exit
@@ -108,22 +108,22 @@ execute as @e[type=item,nbt={Item:{id:"minecraft:spawner",tag:{display:{Name:'{"
 
 #Show round result
 # Show correct answer
-execute as @e[type=item,nbt={Item:{id:"minecraft:lime_terracotta",tag:{display:{Name:'{"text":"Show round results","color":"green","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 5 run function practice:drop/quiz_round_result
-execute as @e[type=item,nbt={Item:{id:"minecraft:lime_terracotta",tag:{display:{Name:'{"text":"Show round results","color":"green","italic":false}'}}}}] at @s run kill @s
+execute as @e[type=item,nbt={Item:{id:"minecraft:lime_concrete",tag:{display:{Name:'{"text":"Show round results","color":"green","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 5 run function practice:drop/quiz_round_result
+execute as @e[type=item,nbt={Item:{id:"minecraft:lime_concrete",tag:{display:{Name:'{"text":"Show round results","color":"green","italic":false}'}}}}] at @s run kill @s
 
 execute as @e[type=item,nbt={Item:{id:"minecraft:red_terracotta",tag:{display:{Name:'{"text":"Show round results","color":"red","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 5 run function practice:drop/quiz_round_result
 execute as @e[type=item,nbt={Item:{id:"minecraft:red_terracotta",tag:{display:{Name:'{"text":"Show round results","color":"red","italic":false}'}}}}] at @s run kill @s
 
 # Show correct answer
-execute as @e[type=item,nbt={Item:{id:"minecraft:lime_terracotta",tag:{display:{Name:'{"text":"Show correct answers","color":"green","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 5 run function practice:drop/quiz_correct_answer
-execute as @e[type=item,nbt={Item:{id:"minecraft:lime_terracotta",tag:{display:{Name:'{"text":"Show correct answers","color":"green","italic":false}'}}}}] at @s run kill @s
+execute as @e[type=item,nbt={Item:{id:"minecraft:lime_concrete",tag:{display:{Name:'{"text":"Show correct answers","color":"green","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 5 run function practice:drop/quiz_correct_answer
+execute as @e[type=item,nbt={Item:{id:"minecraft:lime_concrete",tag:{display:{Name:'{"text":"Show correct answers","color":"green","italic":false}'}}}}] at @s run kill @s
 
 execute as @e[type=item,nbt={Item:{id:"minecraft:red_terracotta",tag:{display:{Name:'{"text":"Show correct answers","color":"red","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 5 run function practice:drop/quiz_correct_answer
 execute as @e[type=item,nbt={Item:{id:"minecraft:red_terracotta",tag:{display:{Name:'{"text":"Show correct answers","color":"red","italic":false}'}}}}] at @s run kill @s
 
 # Dungeon spawn with 2 chests
-execute as @e[type=item,nbt={Item:{id:"minecraft:lime_terracotta",tag:{display:{Name:'{"text":"Spawn dungeon chests","color":"green","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 5 run function practice:drop/quiz_dungeon2ch
-execute as @e[type=item,nbt={Item:{id:"minecraft:lime_terracotta",tag:{display:{Name:'{"text":"Spawn dungeon chests","color":"green","italic":false}'}}}}] at @s run kill @s
+execute as @e[type=item,nbt={Item:{id:"minecraft:lime_concrete",tag:{display:{Name:'{"text":"Spawn dungeon chests","color":"green","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 5 run function practice:drop/quiz_dungeon2ch
+execute as @e[type=item,nbt={Item:{id:"minecraft:lime_concrete",tag:{display:{Name:'{"text":"Spawn dungeon chests","color":"green","italic":false}'}}}}] at @s run kill @s
 
 execute as @e[type=item,nbt={Item:{id:"minecraft:red_terracotta",tag:{display:{Name:'{"text":"Spawn dungeon chests","color":"red","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 5 run function practice:drop/quiz_dungeon2ch
 execute as @e[type=item,nbt={Item:{id:"minecraft:red_terracotta",tag:{display:{Name:'{"text":"Spawn dungeon chests","color":"red","italic":false}'}}}}] at @s run kill @s
