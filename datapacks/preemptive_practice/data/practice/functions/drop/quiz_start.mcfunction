@@ -1,4 +1,4 @@
-
+playsound minecraft:block.beacon.power_select player @a ~ ~ ~ 1 1.5
 
 scoreboard players set @a hotbar_index 9
 

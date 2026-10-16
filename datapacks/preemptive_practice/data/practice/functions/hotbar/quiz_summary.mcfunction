@@ -1,4 +1,5 @@
-replaceitem entity @a hotbar.0 minecraft:lime_terracotta{display:{Name:'{"text":"Enabled","color":"green","italic":false}'}} 1
+execute if score #enabled summary_state matches 1 run replaceitem entity @a hotbar.0 minecraft:lime_concrete{Enchantments:[{id:"minecraft:unbreaking",lvl:1s}],HideFlags:1,display:{Name:'{"text":"Enabled","color":"green","italic":false}'}} 1
+execute if score #enabled summary_state matches 0 run replaceitem entity @a hotbar.0 minecraft:red_terracotta{display:{Name:'{"text":"Disabled","color":"red","italic":false}'}} 1
 
 execute if score #enabled summary_state matches 1 run replaceitem entity @a hotbar.1 minecraft:air 1
 execute if score #enabled summary_state matches 1 run replaceitem entity @a hotbar.2 minecraft:air 1

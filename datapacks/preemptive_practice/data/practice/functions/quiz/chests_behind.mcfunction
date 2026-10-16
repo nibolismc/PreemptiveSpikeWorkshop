@@ -1,9 +1,9 @@
 function practice:get_random
 
-execute if score #result random matches 0..599 run scoreboard players set @a quiz_beh_idx 0
-execute if score #result random matches 600..849 run scoreboard players set @a quiz_beh_idx 1
-execute if score #result random matches 850..929 run scoreboard players set @a quiz_beh_idx 2
-execute if score #result random matches 930..969 run scoreboard players set @a quiz_beh_idx 3
+execute if score #result random matches 0..659 run scoreboard players set @a quiz_beh_idx 0
+execute if score #result random matches 660..869 run scoreboard players set @a quiz_beh_idx 1
+execute if score #result random matches 870..939 run scoreboard players set @a quiz_beh_idx 2
+execute if score #result random matches 940..969 run scoreboard players set @a quiz_beh_idx 3
 execute if score #result random matches 970..989 run scoreboard players set @a quiz_beh_idx 4
 execute if score #result random matches 990..994 run scoreboard players set @a quiz_beh_idx 5
 execute if score #result random matches 995..996 run scoreboard players set @a quiz_beh_idx 6
