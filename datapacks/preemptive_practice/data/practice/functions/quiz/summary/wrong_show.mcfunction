@@ -1,4 +1,4 @@
-playsound minecraft:ui.button.click master @a ~ ~ ~ 0.5 1
+playsound minecraft:ui.button.click master @a ~ ~ ~ 0.3 1
 
 tellraw @a {"text":"","color":"red","bold":true}
 data modify storage practice:quiz wrongq set value []

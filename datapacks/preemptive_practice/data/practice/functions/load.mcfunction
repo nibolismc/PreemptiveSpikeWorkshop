@@ -107,3 +107,9 @@ scoreboard players set #modulus random 65536
 scoreboard players set #max_limit random 1000
 scoreboard players set #seed random 12345
 scoreboard players set #minus_one random -1
+
+#reset workshop
+fill -793 34 1968 -786 34 1968 minecraft:air
+fill -793 34 1983 -786 34 1983 minecraft:air
+scoreboard players set @a chests_in_front 0
+scoreboard players set @a chests_behind 0
