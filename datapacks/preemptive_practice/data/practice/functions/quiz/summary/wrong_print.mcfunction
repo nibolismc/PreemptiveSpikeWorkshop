@@ -1,0 +1,6 @@
+execute store result score #vfront quiz_sum run data get storage practice:quiz tmp[0].front
+execute store result score #vbeh quiz_sum run data get storage practice:quiz tmp[0].behind
+execute store result score #vsp quiz_sum run data get storage practice:quiz tmp[0].spawner
+
+tellraw @a ["",{"text":"#","color":"gray"},{"nbt":"tmp[0].n","storage":"practice:quiz","color":"gray"},{"text":" "},{"nbt":"tmp[0].guess_txt","storage":"practice:quiz","interpret":true},{"text":"   [view in Workshop]","color":"dark_green","clickEvent":{"action":"run_command","value":"/function practice:quiz/summary/view_workshop"},"hoverEvent":{"action":"show_text","contents":{"text":"Show this round in the Workshop","color":"gray"}}}]
+tellraw @a ["",{"text":"Answer:","color":"yellow","underlined":true},{"text":"\n\n  Chests in front: ","color":"white"},{"nbt":"tmp[0].front","storage":"practice:quiz","color":"gold"},{"text":"\n  Spawner: ","color":"white"},{"nbt":"tmp[0].sp_txt","storage":"practice:quiz","interpret":true},{"text":"\n  Chests behind: ","color":"white"},{"nbt":"tmp[0].behind","storage":"practice:quiz","color":"gold"},{"text":"\n"}]

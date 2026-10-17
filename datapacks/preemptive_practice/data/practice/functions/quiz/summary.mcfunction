@@ -1,1 +1,1 @@
-say hi
+execute if data storage practice:quiz rounds[0] run function practice:quiz/summary/run

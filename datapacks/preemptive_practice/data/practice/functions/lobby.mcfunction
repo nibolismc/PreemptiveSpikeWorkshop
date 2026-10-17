@@ -9,6 +9,7 @@ bossbar set practice:chests_behind visible false
 bossbar set practice:number_of_rounds visible false
 bossbar set practice:round visible false
 
+gamemode survival @a
 
 scoreboard players set @a deaths 0
 

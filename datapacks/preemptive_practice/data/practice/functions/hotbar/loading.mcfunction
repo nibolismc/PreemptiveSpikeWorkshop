@@ -1,0 +1,9 @@
+replaceitem entity @a hotbar.0 minecraft:magenta_stained_glass_pane{display:{Name:'{"text":""}'}}
+replaceitem entity @a hotbar.1 minecraft:magenta_stained_glass_pane{display:{Name:'{"text":""}'}}
+replaceitem entity @a hotbar.2 minecraft:magenta_stained_glass_pane{display:{Name:'{"text":""}'}}
+replaceitem entity @a hotbar.3 minecraft:magenta_stained_glass_pane{display:{Name:'{"text":""}'}}
+replaceitem entity @a hotbar.4 minecraft:magenta_stained_glass_pane{display:{Name:'{"text":""}'}}
+replaceitem entity @a hotbar.5 minecraft:magenta_stained_glass_pane{display:{Name:'{"text":""}'}}
+replaceitem entity @a hotbar.6 minecraft:magenta_stained_glass_pane{display:{Name:'{"text":""}'}}
+replaceitem entity @a hotbar.7 minecraft:magenta_stained_glass_pane{display:{Name:'{"text":""}'}}
+replaceitem entity @a hotbar.8 minecraft:magenta_stained_glass_pane{display:{Name:'{"text":""}'}}

@@ -202,11 +202,11 @@ execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name
 
 
 # QUIZ SUMMARY
-execute as @e[type=item,nbt={Item:{id:"minecraft:lime_concrete",tag:{display:{Name:'{"text":"Enabled","color":"green","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 7 run function practice:drop/quiz_summary_state
-execute as @e[type=item,nbt={Item:{id:"minecraft:lime_concrete",tag:{display:{Name:'{"text":"Enabled","color":"green","italic":false}'}}}}] at @s run kill @s
+execute as @e[type=item,nbt={Item:{id:"minecraft:lime_concrete",tag:{display:{Name:'{"text":"Show summary","color":"green","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 5 run function practice:drop/quiz_summary_state
+execute as @e[type=item,nbt={Item:{id:"minecraft:lime_concrete",tag:{display:{Name:'{"text":"Show summary","color":"green","italic":false}'}}}}] at @s run kill @s
 
-execute as @e[type=item,nbt={Item:{id:"minecraft:red_terracotta",tag:{display:{Name:'{"text":"Disabled","color":"red","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 7 run function practice:drop/quiz_summary_state
-execute as @e[type=item,nbt={Item:{id:"minecraft:red_terracotta",tag:{display:{Name:'{"text":"Disabled","color":"red","italic":false}'}}}}] at @s run kill @s
+execute as @e[type=item,nbt={Item:{id:"minecraft:red_terracotta",tag:{display:{Name:'{"text":"Show summary","color":"red","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 5 run function practice:drop/quiz_summary_state
+execute as @e[type=item,nbt={Item:{id:"minecraft:red_terracotta",tag:{display:{Name:'{"text":"Show summary","color":"red","italic":false}'}}}}] at @s run kill @s
 
 
 # QUIZ GAME HOTBAR
@@ -235,6 +235,7 @@ execute as @a[scores={hotbar_index=6}] run function practice:hotbar/numbers2
 execute as @a[scores={hotbar_index=7}] run function practice:hotbar/quiz_summary
 execute as @a[scores={hotbar_index=8}] run function practice:hotbar/quiz_settings_spawners
 execute as @a[scores={hotbar_index=9}] run function practice:hotbar/quiz_game
+execute as @a[scores={hotbar_index=99}] run function practice:hotbar/loading
 
 #during spikecheck
 execute as @a[scores={hotbar_index=1..3}] run function practice:place_starterstaircase

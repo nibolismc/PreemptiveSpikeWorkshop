@@ -1,0 +1,3 @@
+execute at @a run playsound minecraft:entity.experience_orb.pickup player @a ~ ~ ~ 1 1
+
+tellraw @s ["",{"text":"\nMap made by ","color":"gold"},{"text":"Nibolis_","color":"dark_green"},{"text":"\n"},{"text":"inspired by ","color":"yellow"},{"text":"Lama's Practice Map","color":"aqua","underlined":true,"clickEvent":{"action":"open_url","value":"https://www.mediafire.com/file/lzbecct99g8p22i/Lama%27s_Practice_Map.zip/file"},"hoverEvent":{"action":"show_text","contents":{"text":"Open download link","color":"gray"}}}]

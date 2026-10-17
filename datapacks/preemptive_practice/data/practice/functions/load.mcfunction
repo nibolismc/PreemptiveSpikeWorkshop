@@ -1,5 +1,5 @@
 scoreboard objectives add hotbar_index dummy
-scoreboard players set @a hotbar_index 4
+scoreboard players set @a hotbar_index 0
 
 scoreboard objectives add placed_head minecraft.used:minecraft.player_head
 
@@ -18,10 +18,10 @@ scoreboard objectives add chest_index dummy
 
 #rounds
 scoreboard objectives add number_of_rounds dummy
-scoreboard players set @a number_of_rounds 10
+scoreboard players set @a number_of_rounds 15
 
 scoreboard objectives add current_round dummy
-scoreboard players set current_round 0
+scoreboard players set @a current_round 0
 
 #round result
 scoreboard objectives add quiz_spawner_idx dummy
@@ -51,7 +51,7 @@ bossbar set practice:chests_behind max 8
 bossbar set practice:number_of_rounds max 101
 
 bossbar set practice:mob_spawner value 1
-bossbar set practice:number_of_rounds value 10
+bossbar set practice:number_of_rounds value 15
 
 bossbar set practice:chests_front color red
 bossbar set practice:mob_spawner color blue
@@ -69,9 +69,21 @@ scoreboard players set #skeleton spawner_state 1
 scoreboard players set #zombie spawner_state 0
 scoreboard players set #none spawner_state 1
 
-#quiz summary states
+#quiz summary
 scoreboard objectives add summary_state dummy
 scoreboard players set #enabled summary_state 1
+
+scoreboard objectives add quiz_sum dummy
+scoreboard objectives add quiz_guess dummy
+scoreboard players set @a quiz_guess 0
+
+scoreboard players set #100 quiz_sum 100
+scoreboard players set #total quiz_sum 0
+scoreboard players set #right quiz_sum 0
+scoreboard players set #pct quiz_sum 0
+scoreboard players set #ok quiz_sum 0
+
+execute unless data storage practice:quiz glyphs run data modify storage practice:quiz glyphs set value ['{"text":"","color":"dark_gray"}']
 
 #quiz round calc
 scoreboard objectives add quiz_tmp dummy

@@ -1,6 +1,9 @@
 replaceitem entity @s hotbar.0 minecraft:oak_sign{display:{Name:'{"text":"Number of rounds","color":"gold","italic":false}'}} 1
 replaceitem entity @a hotbar.1 minecraft:spawner{display:{Name:'{"text":"Spawners","color":"aqua","italic":false}'}} 1
-replaceitem entity @a hotbar.2 minecraft:paper{display:{Name:'{"text":"Summary","color":"yellow","italic":false}'}} 1
+#replaceitem entity @a hotbar.2 minecraft:paper{display:{Name:'{"text":"Summary","color":"yellow","italic":false}'}} 1
+
+execute if score #enabled summary_state matches 1 run replaceitem entity @a hotbar.2 minecraft:lime_concrete{Enchantments:[{id:"minecraft:unbreaking",lvl:1s}],HideFlags:1,display:{Name:'{"text":"Show summary","color":"green","italic":false}'}} 1
+execute if score #enabled summary_state matches 0 run replaceitem entity @a hotbar.2 minecraft:red_terracotta{display:{Name:'{"text":"Show summary","color":"red","italic":false}'}} 1
 
 execute if score #state round_result matches 1 run replaceitem entity @a hotbar.3 minecraft:lime_concrete{Enchantments:[{id:"minecraft:unbreaking",lvl:1s}],HideFlags:1,display:{Name:'{"text":"Show round results","color":"green","italic":false}'}} 1
 execute if score #state round_result matches 0 run replaceitem entity @a hotbar.3 minecraft:red_terracotta{display:{Name:'{"text":"Show round results","color":"red","italic":false}'}} 1
