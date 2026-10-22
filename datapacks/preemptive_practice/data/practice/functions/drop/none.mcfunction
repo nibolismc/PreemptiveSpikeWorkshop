@@ -5,5 +5,5 @@ bossbar set practice:mob_spawner name {"text":"No Spawner","color":"gray"}
 bossbar set practice:mob_spawner value 0
 bossbar set practice:mob_spawner color white
 
-setblock -789 34 1978 minecraft:air destroy
+setblock -917 34 1978 minecraft:air destroy
 kill @e[type=experience_orb]

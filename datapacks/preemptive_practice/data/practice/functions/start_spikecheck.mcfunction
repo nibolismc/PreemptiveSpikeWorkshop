@@ -1,5 +1,5 @@
-tp @a -787.50 42.00 1936.50 360 0
-playsound minecraft:ui.toast.in player @a -787.50 42.00 1936.50 10
+tp @a -915.50 42.00 1936.50 360 0
+playsound minecraft:ui.toast.in player @a -915.50 42.00 1936.50 10
 scoreboard players set @a hotbar_index 1
 
 gamemode survival @a

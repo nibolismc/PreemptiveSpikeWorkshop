@@ -5,5 +5,5 @@ bossbar set practice:mob_spawner name {"text":"Spider Spawner","color":"light_pu
 bossbar set practice:mob_spawner value 1
 bossbar set practice:mob_spawner color purple
 
-setblock -789 34 1978 minecraft:spawner{SpawnData:{id:"minecraft:spider"}} destroy
+setblock -917 34 1978 minecraft:spawner{SpawnData:{id:"minecraft:spider"}} destroy
 kill @e[type=experience_orb]
