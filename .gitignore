@@ -11,3 +11,6 @@ standardoptions.txt
 /advancements
 /.releases
 make_release.py
+playerdata/
+advancements/
+stats/

@@ -108,12 +108,9 @@ scoreboard players set #max_limit random 1000
 scoreboard players set #seed random 12345
 scoreboard players set #minus_one random -1
 
-#reset workshop
-fill -793 34 1968 -786 34 1968 minecraft:air
-fill -793 34 1983 -786 34 1983 minecraft:air
-scoreboard players set @a chests_in_front 0
-scoreboard players set @a chests_behind 0
+execute unless data storage practice:quiz rounds run data modify storage practice:quiz rounds set value []
+scoreboard players set @a quiz_spawner_idx 0
+scoreboard players set @a quiz_front_idx 0
+scoreboard players set @a quiz_beh_idx 0
 
-function practice:drop/silverfish
-fill -921 34 1968 -914 34 1968 minecraft:air
-fill -921 34 1983 -914 34 1983 minecraft:air
+schedule function practice:reset_workshop 20t
