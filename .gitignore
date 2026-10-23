@@ -14,3 +14,5 @@ make_release.py
 playerdata/
 advancements/
 stats/
+data/scoreboard.dat
+data/command_storage_practice.dat
