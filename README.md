@@ -6,7 +6,7 @@ A Preemptive Spike Practice Map inspired by [Lama's Practice Map](https://www.me
 
 * Drop items in the hotbar to navigate the menu.
 * Scan directly down mid (posZ / south).
-* Use the same settings as in an actual run (recommended: 8 chunk RD, 50% ED).
+* Render Distance and Entity Distance don't matter on this practice map.
 
 ## Spike Workshop
 
