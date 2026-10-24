@@ -16,4 +16,6 @@ bossbar set practice:chests_behind visible false
 bossbar set practice:number_of_rounds visible true
 bossbar set practice:round visible false
 
+scoreboard objectives setdisplay sidebar
+
 function practice:updatebossbar

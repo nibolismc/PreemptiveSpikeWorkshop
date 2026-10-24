@@ -5,5 +5,8 @@ bossbar set practice:mob_spawner name {"text":"Cave Spider Spawner","color":"lig
 bossbar set practice:mob_spawner value 1
 bossbar set practice:mob_spawner color pink
 
-setblock -917 34 1978 minecraft:spawner{SpawnData:{id:"minecraft:cave_spider"}} destroy
+team modify ws_spawner prefix {"text":"Cave Spider ","color":"light_purple"}
+team modify ws_spawner color light_purple
+
+setblock -917 34 1976 minecraft:spawner{SpawnData:{id:"minecraft:cave_spider"}} destroy
 kill @e[type=experience_orb]

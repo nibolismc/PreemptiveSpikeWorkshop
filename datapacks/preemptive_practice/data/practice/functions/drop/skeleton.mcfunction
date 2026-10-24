@@ -5,5 +5,8 @@ bossbar set practice:mob_spawner name {"text":"Skeleton Spawner","color":"light_
 bossbar set practice:mob_spawner value 1
 bossbar set practice:mob_spawner color purple
 
-setblock -917 34 1978 minecraft:spawner{SpawnData:{id:"minecraft:skeleton"}} destroy
+team modify ws_spawner prefix {"text":"Skeleton ","color":"dark_puple"}
+team modify ws_spawner color dark_purple
+
+setblock -917 34 1976 minecraft:spawner{SpawnData:{id:"minecraft:skeleton"}} destroy
 kill @e[type=experience_orb]

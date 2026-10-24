@@ -59,8 +59,6 @@ bossbar set practice:chests_behind color red
 bossbar set practice:number_of_rounds color red
 bossbar set practice:round color purple
 
-function practice:updatebossbar
-
 #quiz spawner states
 scoreboard objectives add spawner_state dummy
 scoreboard players set #cave_spider spawner_state 1
@@ -114,3 +112,29 @@ scoreboard players set @a quiz_front_idx 0
 scoreboard players set @a quiz_beh_idx 0
 
 schedule function practice:reset_workshop 20t
+
+#Scoreboard
+scoreboard objectives remove workshop_sb
+scoreboard objectives add workshop_sb dummy {"text":"Configuration","color":"gray"}
+
+team add ws_front
+team add ws_spawner
+team add ws_behind
+
+team modify ws_front color gold
+team modify ws_spawner color aqua
+team modify ws_behind color gold
+
+team modify ws_front prefix {"text":"Chest Layer #","color":"gold"}
+team join ws_front 1:
+
+team join ws_spawner Spawner
+
+team modify ws_behind prefix {"text":"Chest Layer #","color":"gold"}
+team join ws_behind 2:
+
+scoreboard players set 1: workshop_sb 9
+scoreboard players set Spawner workshop_sb 6
+scoreboard players set 2: workshop_sb 3
+
+function practice:updatebossbar

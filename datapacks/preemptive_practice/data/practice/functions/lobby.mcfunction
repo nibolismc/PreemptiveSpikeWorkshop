@@ -18,3 +18,5 @@ bossbar set practice:mob_spawner players @a
 bossbar set practice:chests_behind players @a
 bossbar set practice:number_of_rounds players @a
 bossbar set practice:round players @a
+
+scoreboard objectives setdisplay sidebar

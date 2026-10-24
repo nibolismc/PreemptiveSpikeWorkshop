@@ -10,10 +10,12 @@ bossbar set practice:chests_front players @a
 bossbar set practice:mob_spawner players @a
 bossbar set practice:chests_behind players @a
 
-bossbar set practice:chests_front visible true
-bossbar set practice:mob_spawner visible true
-bossbar set practice:chests_behind visible true
+bossbar set practice:chests_front visible false
+bossbar set practice:mob_spawner visible false
+bossbar set practice:chests_behind visible false
 bossbar set practice:number_of_rounds visible false
 bossbar set practice:round visible false
+
+scoreboard objectives setdisplay sidebar workshop_sb
 
 function practice:updatebossbar

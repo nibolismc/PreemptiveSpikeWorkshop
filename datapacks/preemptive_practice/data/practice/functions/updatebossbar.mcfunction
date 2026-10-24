@@ -14,3 +14,24 @@ execute as @a[scores={hotbar_index=9,number_of_rounds=..100}] store result bossb
 execute as @a[scores={hotbar_index=9,number_of_rounds=101}] run bossbar set practice:round max 1
 
 execute as @a[scores={hotbar_index=9}] store result bossbar practice:round value run scoreboard players get @s current_round
+
+#scoreboard
+execute if score @p chests_in_front matches 0 run team modify ws_front suffix {"text":" 0","color":"white"}
+execute if score @p chests_in_front matches 1 run team modify ws_front suffix {"text":" 1","color":"white"}
+execute if score @p chests_in_front matches 2 run team modify ws_front suffix {"text":" 2","color":"white"}
+execute if score @p chests_in_front matches 3 run team modify ws_front suffix {"text":" 3","color":"white"}
+execute if score @p chests_in_front matches 4 run team modify ws_front suffix {"text":" 4","color":"white"}
+execute if score @p chests_in_front matches 5 run team modify ws_front suffix {"text":" 5","color":"white"}
+execute if score @p chests_in_front matches 6 run team modify ws_front suffix {"text":" 6","color":"white"}
+execute if score @p chests_in_front matches 7 run team modify ws_front suffix {"text":" 7","color":"white"}
+execute if score @p chests_in_front matches 8 run team modify ws_front suffix {"text":" 8","color":"white"}
+
+execute if score @p chests_behind matches 0 run team modify ws_behind suffix {"text":" 0","color":"white"}
+execute if score @p chests_behind matches 1 run team modify ws_behind suffix {"text":" 1","color":"white"}
+execute if score @p chests_behind matches 2 run team modify ws_behind suffix {"text":" 2","color":"white"}
+execute if score @p chests_behind matches 3 run team modify ws_behind suffix {"text":" 3","color":"white"}
+execute if score @p chests_behind matches 4 run team modify ws_behind suffix {"text":" 4","color":"white"}
+execute if score @p chests_behind matches 5 run team modify ws_behind suffix {"text":" 5","color":"white"}
+execute if score @p chests_behind matches 6 run team modify ws_behind suffix {"text":" 6","color":"white"}
+execute if score @p chests_behind matches 7 run team modify ws_behind suffix {"text":" 7","color":"white"}
+execute if score @p chests_behind matches 8 run team modify ws_behind suffix {"text":" 8","color":"white"}
