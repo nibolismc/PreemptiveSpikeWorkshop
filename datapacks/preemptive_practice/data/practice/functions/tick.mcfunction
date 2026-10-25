@@ -5,17 +5,14 @@ effect give @a minecraft:resistance 999999 255 true
 
 # DEFAULT HOTBAR
 
-# Chests in front
-execute as @e[type=item,nbt={Item:{id:"minecraft:chest"}}] at @s if score @p[distance=..2] hotbar_index matches 1..3 run function practice:drop/chest_in_front
+# Chests layers
+execute as @e[type=item,nbt={Item:{id:"minecraft:chest"}}] at @s if score @p[distance=..2] hotbar_index matches 1..3 run function practice:drop/chest_layers
 execute as @e[type=item,nbt={Item:{id:"minecraft:chest"}}] at @s if entity @p[distance=..2] run kill @s
 
-# Mob spawner
-execute as @e[type=item,nbt={Item:{id:"minecraft:spawner"}}] at @s if score @p[distance=..2] hotbar_index matches 1..3 run function practice:drop/spawner
+# Mob spawners
+execute as @e[type=item,nbt={Item:{id:"minecraft:spawner"}}] at @s if score @p[distance=..2] hotbar_index matches 1..3 run function practice:drop/spawners
 execute as @e[type=item,nbt={Item:{id:"minecraft:spawner"}}] at @s if score @p[distance=..2] hotbar_index matches 1..3 run kill @s
 
-# Chests behind
-execute as @e[type=item,nbt={Item:{id:"minecraft:ender_chest"}}] at @s if score @p[distance=..2] hotbar_index matches 1..3 run function practice:drop/chest_behind
-execute as @e[type=item,nbt={Item:{id:"minecraft:ender_chest"}}] at @s if entity @p[distance=..2] run kill @s
 
 # Drop for info
 execute as @e[type=item,nbt={Item:{id:"minecraft:book"}}] at @s if score @p[distance=..2] hotbar_index matches 1..3 run function practice:drop/info
@@ -24,6 +21,72 @@ execute as @e[type=item,nbt={Item:{id:"minecraft:book"}}] at @s if score @p[dist
 # Exit
 execute as @e[type=item,nbt={Item:{id:"minecraft:oak_door"}}] at @s if entity @p run function practice:drop/exit
 execute as @e[type=item,nbt={Item:{id:"minecraft:oak_door"}}] at @s if entity @p run kill @s
+
+
+# CHEST LAYERS
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"Chests in front","color":"gold","italic":false}'}}}}] at @s if entity @p[distance=..2,scores={sneak_check=..0}] run function practice:drop/chest_in_front
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"Chests in front","color":"gold","italic":false}'}}}}] at @s if entity @p[distance=..2,scores={sneak_check=..0}] run kill @s
+
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"Chests between #1","color":"gold","italic":false}'}}}}] at @s if entity @p[distance=..2,scores={sneak_check=..0}] run function practice:drop/chest_between1
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"Chests between #1","color":"gold","italic":false}'}}}}] at @s if entity @p[distance=..2,scores={sneak_check=..0}] run kill @s
+
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"Chests between #2","color":"gold","italic":false}'}}}}] at @s if entity @p[distance=..2,scores={sneak_check=..0}] run function practice:drop/chest_between2
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"Chests between #2","color":"gold","italic":false}'}}}}] at @s if entity @p[distance=..2,scores={sneak_check=..0}] run kill @s
+
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"Chests behind","color":"gold","italic":false}'}}}}] at @s if entity @p[distance=..2,scores={sneak_check=..0}] run function practice:drop/chest_behind
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"Chests behind","color":"gold","italic":false}'}}}}] at @s if entity @p[distance=..2,scores={sneak_check=..0}] run kill @s
+
+
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"Chests in front","color":"gold","italic":false}'}}}}] at @s if entity @p[distance=..2,scores={sneak_check=1..}] run scoreboard players set @a chest_index 1
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"Chests in front","color":"gold","italic":false}'}}}}] at @s if entity @p[distance=..2,scores={sneak_check=1..}] run function practice:drop/disable_layer
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"Chests in front","color":"gold","italic":false}'}}}}] at @s if entity @p[distance=..2,scores={sneak_check=1..}] run kill @s
+
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"Chests between #1","color":"gold","italic":false}'}}}}] at @s if entity @p[distance=..2,scores={sneak_check=1..}] run scoreboard players set @a chest_index 2
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"Chests between #1","color":"gold","italic":false}'}}}}] at @s if entity @p[distance=..2,scores={sneak_check=1..}] run function practice:drop/disable_layer
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"Chests between #1","color":"gold","italic":false}'}}}}] at @s if entity @p[distance=..2,scores={sneak_check=1..}] run kill @s
+
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"Chests between #2","color":"gold","italic":false}'}}}}] at @s if entity @p[distance=..2,scores={sneak_check=1..}] run scoreboard players set @a chest_index 3
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"Chests between #2","color":"gold","italic":false}'}}}}] at @s if entity @p[distance=..2,scores={sneak_check=1..}] run function practice:drop/disable_layer
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"Chests between #2","color":"gold","italic":false}'}}}}] at @s if entity @p[distance=..2,scores={sneak_check=1..}] run kill @s
+
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"Chests behind","color":"gold","italic":false}'}}}}] at @s if entity @p[distance=..2,scores={sneak_check=1..}] run scoreboard players set @a chest_index 4
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"Chests behind","color":"gold","italic":false}'}}}}] at @s if entity @p[distance=..2,scores={sneak_check=1..}] run function practice:drop/disable_layer
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"Chests behind","color":"gold","italic":false}'}}}}] at @s if entity @p[distance=..2,scores={sneak_check=1..}] run kill @s
+
+
+
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"Chests in front","color":"gray","italic":false}'}}}}] at @s if entity @p[distance=..2] run scoreboard players set @a chest_index 1
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"Chests in front","color":"gray","italic":false}'}}}}] at @s if entity @p[distance=..2] run function practice:drop/enable_layer
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"Chests in front","color":"gray","italic":false}'}}}}] at @s if entity @p[distance=..2] run kill @s
+
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"Chests between #1","color":"gray","italic":false}'}}}}] at @s if entity @p[distance=..2] run scoreboard players set @a chest_index 2
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"Chests between #1","color":"gray","italic":false}'}}}}] at @s if entity @p[distance=..2] run function practice:drop/enable_layer
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"Chests between #1","color":"gray","italic":false}'}}}}] at @s if entity @p[distance=..2] run kill @s
+
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"Chests between #2","color":"gray","italic":false}'}}}}] at @s if entity @p[distance=..2] run scoreboard players set @a chest_index 3
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"Chests between #2","color":"gray","italic":false}'}}}}] at @s if entity @p[distance=..2] run function practice:drop/enable_layer
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"Chests between #2","color":"gray","italic":false}'}}}}] at @s if entity @p[distance=..2] run kill @s
+
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"Chests behind","color":"gray","italic":false}'}}}}] at @s if entity @p[distance=..2] run scoreboard players set @a chest_index 4
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"Chests behind","color":"gray","italic":false}'}}}}] at @s if entity @p[distance=..2] run function practice:drop/enable_layer
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"Chests behind","color":"gray","italic":false}'}}}}] at @s if entity @p[distance=..2] run kill @s
+
+
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"Chests in front","color":"gray","italic":false}'}}}}] at @s if entity @p[distance=..2,scores={sneak_check=1..}] run scoreboard players set @a chest_index 1
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"Chests in front","color":"gray","italic":false}'}}}}] at @s if entity @p[distance=..2,scores={sneak_check=1..}] run function practice:drop/disable_layer
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"Chests in front","color":"gray","italic":false}'}}}}] at @s if entity @p[distance=..2,scores={sneak_check=1..}] run kill @s
+
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"Chests between #1","color":"gray","italic":false}'}}}}] at @s if entity @p[distance=..2,scores={sneak_check=1..}] run scoreboard players set @a chest_index 2
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"Chests between #1","color":"gray","italic":false}'}}}}] at @s if entity @p[distance=..2,scores={sneak_check=1..}] run function practice:drop/disable_layer
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"Chests between #1","color":"gray","italic":false}'}}}}] at @s if entity @p[distance=..2,scores={sneak_check=1..}] run kill @s
+
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"Chests between #2","color":"gray","italic":false}'}}}}] at @s if entity @p[distance=..2,scores={sneak_check=1..}] run scoreboard players set @a chest_index 3
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"Chests between #2","color":"gray","italic":false}'}}}}] at @s if entity @p[distance=..2,scores={sneak_check=1..}] run function practice:drop/disable_layer
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"Chests between #2","color":"gray","italic":false}'}}}}] at @s if entity @p[distance=..2,scores={sneak_check=1..}] run kill @s
+
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"Chests behind","color":"gray","italic":false}'}}}}] at @s if entity @p[distance=..2,scores={sneak_check=1..}] run scoreboard players set @a chest_index 4
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"Chests behind","color":"gray","italic":false}'}}}}] at @s if entity @p[distance=..2,scores={sneak_check=1..}] run function practice:drop/disable_layer
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"Chests behind","color":"gray","italic":false}'}}}}] at @s if entity @p[distance=..2,scores={sneak_check=1..}] run kill @s
 
 
 # SPAWNER HOTBAR
@@ -68,6 +131,10 @@ execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name
 execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"+1","color":"green","italic":false}'}}}}] at @s if entity @p[distance=..2] run function practice:drop/plus_one
 execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"+1","color":"green","italic":false}'}}}}] at @s if entity @p[distance=..2] run kill @s
 
+# Disable
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"Disable layer (Crouch + Drop)","color":"red","italic":false}'}}}}] at @s if entity @p[distance=..2] run function practice:drop/disable_layer
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"Disable layer (Crouch + Drop)","color":"red","italic":false}'}}}}] at @s if entity @p[distance=..2] run kill @s
+
 # Back
 #execute as @e[type=item,nbt={Item:{id:"minecraft:black_banner",tag:{display:{Name:'{"text":"Back","color":"gray","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 1..3 run function practice:drop/back
 #execute as @e[type=item,nbt={Item:{id:"minecraft:black_banner",tag:{display:{Name:'{"text":"Back","color":"gray","italic":false}'}}}}] at @s if entity @p[distance=..2] run kill @s
@@ -104,7 +171,7 @@ execute as @e[type=item,nbt={Item:{id:"minecraft:paper",tag:{display:{Name:'{"te
 
 # Spawners
 execute as @e[type=item,nbt={Item:{id:"minecraft:spawner",tag:{display:{Name:'{"text":"Spawners","color":"aqua","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 5 run function practice:drop/quiz_settings_spawners
-execute as @e[type=item,nbt={Item:{id:"minecraft:spawner",tag:{display:{Name:'{"text":"Spawners","color":"aqua","italic":false}'}}}}] at @s run kill @s
+execute as @e[type=item,nbt={Item:{id:"minecraft:spawner"}}] at @s if score @p[distance=..2] hotbar_index matches 5..9 run kill @s
 
 #Show round result
 # Show correct answer
@@ -223,6 +290,9 @@ execute as @e[type=item,nbt={Item:{id:"minecraft:red_concrete",tag:{display:{Nam
 execute as @e[type=item,nbt={Item:{id:"minecraft:red_banner",tag:{display:{Name:'{"text":"Quit","color":"red","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 9 run function practice:drop/quiz_quit
 execute as @e[type=item,nbt={Item:{id:"minecraft:red_banner",tag:{display:{Name:'{"text":"Quit","color":"red","italic":false}'}}}}] at @s run kill @s
 
+
+scoreboard players set @a sneak_check 0
+
 #HOTBAR INDEX
 
 execute as @a[scores={hotbar_index=0}] run function practice:hotbar/empty
@@ -235,10 +305,13 @@ execute as @a[scores={hotbar_index=6}] run function practice:hotbar/numbers2
 execute as @a[scores={hotbar_index=7}] run function practice:hotbar/quiz_summary
 execute as @a[scores={hotbar_index=8}] run function practice:hotbar/quiz_settings_spawners
 execute as @a[scores={hotbar_index=9}] run function practice:hotbar/quiz_game
+execute as @a[scores={hotbar_index=10}] run function practice:hotbar/spawners
+execute as @a[scores={hotbar_index=11}] run function practice:hotbar/chest_layers
 execute as @a[scores={hotbar_index=99}] run function practice:hotbar/loading
 
 #during spikecheck
 execute as @a[scores={hotbar_index=1..3}] run function practice:place_starterstaircase
+execute as @a[scores={hotbar_index=10..12}] run function practice:place_starterstaircase
 
 #during spikequiz
 execute as @a[scores={hotbar_index=4..}] run function practice:place_starterstaircase_quiz
@@ -252,21 +325,18 @@ execute as @a[scores={deaths=1..}] run function practice:lobby
 #ACTIONBAR
 
 execute as @a[scores={actionbar=0}] run title @s actionbar {"text":""}
-execute as @a[scores={actionbar=1}] run title @s actionbar {"text":"Chests in front","color":"gold"}
-execute as @a[scores={actionbar=2}] run title @s actionbar {"text":"Mob spawner","color":"aqua"}
-execute as @a[scores={actionbar=3}] run title @s actionbar {"text":"Chests behind","color":"gold"}
+execute as @a[scores={actionbar=2}] run title @s actionbar {"text":"Mob spawners","color":"aqua"}
 execute as @a[scores={actionbar=4}] run title @s actionbar {"text":"Spike Workshop","color":"green"}
 execute as @a[scores={actionbar=5}] run title @s actionbar {"text":"Spike Quiz","color":"aqua"}
 execute as @a[scores={actionbar=6}] run title @s actionbar {"text":"Settings","color":"white"}
 execute as @a[scores={actionbar=7}] run title @s actionbar {"text":"Settings/Number of rounds","color":"gold"}
 execute as @a[scores={actionbar=8}] run title @s actionbar {"text":"Settings/Summary","color":"yellow"}
 execute as @a[scores={actionbar=9}] run title @s actionbar {"text":"Settings/Spawners","color":"aqua"}
-
-#DONT PLACE BLOCKS
-
-execute as @a[scores={placed_head=1..}] run tellraw @a [{"text":"[Warning]","color":"yellow","bold":true},{"text":" Placing some player heads makes the game lag and can cause it to crash!","color":"gray","bold":false}]
-
-scoreboard players set @a placed_head 0
+execute as @a[scores={actionbar=10}] run title @s actionbar {"text":"Chest layers","color":"gold"}
+execute as @a[scores={actionbar=11}] run title @s actionbar {"text":"Chest layers/in front","color":"gold"}
+execute as @a[scores={actionbar=12}] run title @s actionbar {"text":"Chest layers/between #1","color":"gold"}
+execute as @a[scores={actionbar=13}] run title @s actionbar {"text":"Chest layers/between #2","color":"gold"}
+execute as @a[scores={actionbar=14}] run title @s actionbar {"text":"Chest layers/behind","color":"gold"}
 
 #kill items
 

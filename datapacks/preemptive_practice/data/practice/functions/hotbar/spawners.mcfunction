@@ -1,0 +1,9 @@
+replaceitem entity @a hotbar.0 minecraft:player_head{display:{Name:'{"text":"Silverfish Spawner","italic":false}'},SkullOwner:{Id:[I;-1697533322,-1587590272,-1333797184,52998864],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTJlYzJjM2NiOTVhYjc3ZjdhNjBmYjRkMTYwYmNlZDRiODc5MzI5YjYyNjYzZDdhOTg2MDY0MmU1ODhhYjIxMCJ9fX0="}]}}} 1
+replaceitem entity @a hotbar.1 minecraft:player_head{display:{Name:'{"text":"Cave Spider Spawner","italic":false}'},SkullOwner:{Id:[I;1200,1201,1202,1203],Name:"Cave_Spider",Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWNjYzRhMzJkNDVkNzRlOGIxNGVmMWZmZDU1Y2Q1ZjM4MWEwNmQ0OTk5MDgxZDUyZWFlYTEyZTEzMjkzZTIwOSJ9fX0="}]}}} 1
+replaceitem entity @a hotbar.2 minecraft:player_head{display:{Name:'{"text":"Spider Spawner","italic":false}'},SkullOwner:{Id:[I;1204,1205,1206,1207],Name:"Spider",Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2Q1NDE1NDFkYWFmZjUwODk2Y2QyNThiZGJkZDRjZjgwYzNiYTgxNjczNTcyNjA3OGJmZTM5MzkyN2U1N2YxIn19fQ=="}]}}} 1
+replaceitem entity @a hotbar.3 minecraft:skeleton_skull{display:{Name:'{"text":"Skeleton Spawner","italic":false}'}} 1
+replaceitem entity @a hotbar.4 minecraft:zombie_head{display:{Name:'{"text":"Zombie Spawner","italic":false}'}} 1
+replaceitem entity @a hotbar.5 minecraft:air 1
+replaceitem entity @a hotbar.6 minecraft:air 1
+replaceitem entity @a hotbar.7 minecraft:air 1
+replaceitem entity @a hotbar.8 minecraft:black_banner{HideFlags:32,display:{Name:'{"text":"Back","color":"gray","italic":false}'},BlockEntityTag:{Patterns:[{Pattern:mr,Color:0},{Pattern:vhr,Color:0},{Pattern:br,Color:15},{Pattern:tr,Color:15},{Pattern:tts,Color:15},{Pattern:bts,Color:15},{Pattern:bo,Color:15}]}} 1

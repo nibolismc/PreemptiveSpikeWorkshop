@@ -5,8 +5,8 @@ bossbar set practice:mob_spawner name {"text":"Silverfish Spawner","color":"aqua
 bossbar set practice:mob_spawner value 1
 bossbar set practice:mob_spawner color blue
 
-team modify ws_spawner prefix {"text":"Silverfish ","color":"aqua"}
-team modify ws_spawner color aqua
+team modify ws_spawner2 prefix {"text":"Silverfish ","color":"aqua"}
+team modify ws_spawner2 color aqua
 
 setblock -917 34 1976 minecraft:spawner{SpawnData:{id:"minecraft:silverfish"}} destroy
 kill @e[type=experience_orb]

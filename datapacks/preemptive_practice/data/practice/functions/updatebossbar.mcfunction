@@ -26,6 +26,26 @@ execute if score @p chests_in_front matches 6 run team modify ws_front suffix {"
 execute if score @p chests_in_front matches 7 run team modify ws_front suffix {"text":" 7","color":"white"}
 execute if score @p chests_in_front matches 8 run team modify ws_front suffix {"text":" 8","color":"white"}
 
+execute if score @p chests_between1 matches 0 run team modify ws_chest1 suffix {"text":" 0","color":"white"}
+execute if score @p chests_between1 matches 1 run team modify ws_chest1 suffix {"text":" 1","color":"white"}
+execute if score @p chests_between1 matches 2 run team modify ws_chest1 suffix {"text":" 2","color":"white"}
+execute if score @p chests_between1 matches 3 run team modify ws_chest1 suffix {"text":" 3","color":"white"}
+execute if score @p chests_between1 matches 4 run team modify ws_chest1 suffix {"text":" 4","color":"white"}
+execute if score @p chests_between1 matches 5 run team modify ws_chest1 suffix {"text":" 5","color":"white"}
+execute if score @p chests_between1 matches 6 run team modify ws_chest1 suffix {"text":" 6","color":"white"}
+execute if score @p chests_between1 matches 7 run team modify ws_chest1 suffix {"text":" 7","color":"white"}
+execute if score @p chests_between1 matches 8 run team modify ws_chest1 suffix {"text":" 8","color":"white"}
+
+execute if score @p chests_between2 matches 0 run team modify ws_chest2 suffix {"text":" 0","color":"white"}
+execute if score @p chests_between2 matches 1 run team modify ws_chest2 suffix {"text":" 1","color":"white"}
+execute if score @p chests_between2 matches 2 run team modify ws_chest2 suffix {"text":" 2","color":"white"}
+execute if score @p chests_between2 matches 3 run team modify ws_chest2 suffix {"text":" 3","color":"white"}
+execute if score @p chests_between2 matches 4 run team modify ws_chest2 suffix {"text":" 4","color":"white"}
+execute if score @p chests_between2 matches 5 run team modify ws_chest2 suffix {"text":" 5","color":"white"}
+execute if score @p chests_between2 matches 6 run team modify ws_chest2 suffix {"text":" 6","color":"white"}
+execute if score @p chests_between2 matches 7 run team modify ws_chest2 suffix {"text":" 7","color":"white"}
+execute if score @p chests_between2 matches 8 run team modify ws_chest2 suffix {"text":" 8","color":"white"}
+
 execute if score @p chests_behind matches 0 run team modify ws_behind suffix {"text":" 0","color":"white"}
 execute if score @p chests_behind matches 1 run team modify ws_behind suffix {"text":" 1","color":"white"}
 execute if score @p chests_behind matches 2 run team modify ws_behind suffix {"text":" 2","color":"white"}

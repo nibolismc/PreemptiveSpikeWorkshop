@@ -1,6 +1,6 @@
-replaceitem entity @a hotbar.0 minecraft:chest{display:{Name:'{"text":"Chests in front","color":"gold","italic":false}'}} 1
-replaceitem entity @a hotbar.1 minecraft:spawner{display:{Name:'{"text":"Mob spawner","color":"aqua","italic":false}'}} 1
-replaceitem entity @a hotbar.2 minecraft:ender_chest{display:{Name:'{"text":"Chests behind","color":"gold","italic":false}'}} 1
+replaceitem entity @a hotbar.0 minecraft:spawner{display:{Name:'{"text":"Mob spawners","color":"aqua","italic":false}'}} 1
+replaceitem entity @a hotbar.1 minecraft:chest{display:{Name:'{"text":"Chest layers","color":"gold","italic":false}'}} 1
+replaceitem entity @a hotbar.2 minecraft:air 1
 replaceitem entity @a hotbar.3 minecraft:air 1
 replaceitem entity @a hotbar.4 minecraft:air 1
 replaceitem entity @a hotbar.5 minecraft:air 1
