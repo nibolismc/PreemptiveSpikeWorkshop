@@ -22,6 +22,10 @@ scoreboard players set @a chests_behind 0
 
 scoreboard objectives add chest_index dummy
 
+#spawner index
+scoreboard objectives add spawner_index dummy
+scoreboard players set @a spawner_index 1
+
 #rounds
 scoreboard objectives add number_of_rounds dummy
 scoreboard players set @a number_of_rounds 15
@@ -132,6 +136,7 @@ scoreboard players set #between1 chestlayer_state 0
 scoreboard players set #between2 chestlayer_state 0
 scoreboard players set #behind chestlayer_state 1
 
+
 #Scoreboard
 scoreboard objectives remove workshop_sb
 scoreboard objectives add workshop_sb dummy {"text":"----Configuration----","color":"green"}
@@ -171,12 +176,19 @@ team modify ws_behind prefix {"text":"Chests ","color":"gold"}
 team join ws_behind behind:
 
 scoreboard players set Spaw workshop_sb 6
-scoreboard players set Spawn workshop_sb 4  
-scoreboard players set Spawne workshop_sb 2
+#scoreboard players set Spawn workshop_sb 4
+#scoreboard players set Spawne workshop_sb 2
+
+scoreboard objectives add spawners_state dummy
+scoreboard players set #spawner1 spawners_state 0   
+scoreboard players set #spawner2 spawners_state 5
+scoreboard players set #spawner3 spawners_state 5
+
+setblock -917 34 1971 minecraft:spawner{SpawnData:{id:"minecraft:silverfish"}} destroy
+setblock -917 34 1976 minecraft:air destroy
+setblock -917 34 1981 minecraft:air destroy
 
 scoreboard players set front: workshop_sb 7
-scoreboard players set 1: workshop_sb 5
-scoreboard players set 2: workshop_sb 3
 scoreboard players set behind: workshop_sb 1
 
 function practice:updatebossbar

@@ -16,6 +16,11 @@ execute as @a[scores={hotbar_index=9,number_of_rounds=101}] run bossbar set prac
 execute as @a[scores={hotbar_index=9}] store result bossbar practice:round value run scoreboard players get @s current_round
 
 #scoreboard
+execute if score @p chests_in_front matches 0 run team modify ws_front color gray
+execute if score @p chests_in_front matches 0 run team modify ws_front prefix {"text":"Chests in ","color":"gray"}
+execute if score @p chests_in_front matches 1.. run team modify ws_front color gold
+execute if score @p chests_in_front matches 1.. run team modify ws_front prefix {"text":"Chests in ","color":"gold"}
+
 execute if score @p chests_in_front matches 0 run team modify ws_front suffix {"text":" 0","color":"white"}
 execute if score @p chests_in_front matches 1 run team modify ws_front suffix {"text":" 1","color":"white"}
 execute if score @p chests_in_front matches 2 run team modify ws_front suffix {"text":" 2","color":"white"}
@@ -25,6 +30,11 @@ execute if score @p chests_in_front matches 5 run team modify ws_front suffix {"
 execute if score @p chests_in_front matches 6 run team modify ws_front suffix {"text":" 6","color":"white"}
 execute if score @p chests_in_front matches 7 run team modify ws_front suffix {"text":" 7","color":"white"}
 execute if score @p chests_in_front matches 8 run team modify ws_front suffix {"text":" 8","color":"white"}
+
+execute if score @p chests_between1 matches 0 run team modify ws_chest1 color gray
+execute if score @p chests_between1 matches 0 run team modify ws_chest1 prefix {"text":"Chests between #","color":"gray"}
+execute if score @p chests_between1 matches 1.. run team modify ws_chest1 color gold
+execute if score @p chests_between1 matches 1.. run team modify ws_chest1 prefix {"text":"Chests between #","color":"gold"}
 
 execute if score @p chests_between1 matches 0 run team modify ws_chest1 suffix {"text":" 0","color":"white"}
 execute if score @p chests_between1 matches 1 run team modify ws_chest1 suffix {"text":" 1","color":"white"}
@@ -36,6 +46,11 @@ execute if score @p chests_between1 matches 6 run team modify ws_chest1 suffix {
 execute if score @p chests_between1 matches 7 run team modify ws_chest1 suffix {"text":" 7","color":"white"}
 execute if score @p chests_between1 matches 8 run team modify ws_chest1 suffix {"text":" 8","color":"white"}
 
+execute if score @p chests_between2 matches 0 run team modify ws_chest2 color gray
+execute if score @p chests_between2 matches 0 run team modify ws_chest2 prefix {"text":"Chests between #","color":"gray"}
+execute if score @p chests_between2 matches 1.. run team modify ws_chest2 color gold
+execute if score @p chests_between2 matches 1.. run team modify ws_chest2 prefix {"text":"Chests between #","color":"gold"}
+
 execute if score @p chests_between2 matches 0 run team modify ws_chest2 suffix {"text":" 0","color":"white"}
 execute if score @p chests_between2 matches 1 run team modify ws_chest2 suffix {"text":" 1","color":"white"}
 execute if score @p chests_between2 matches 2 run team modify ws_chest2 suffix {"text":" 2","color":"white"}
@@ -45,6 +60,11 @@ execute if score @p chests_between2 matches 5 run team modify ws_chest2 suffix {
 execute if score @p chests_between2 matches 6 run team modify ws_chest2 suffix {"text":" 6","color":"white"}
 execute if score @p chests_between2 matches 7 run team modify ws_chest2 suffix {"text":" 7","color":"white"}
 execute if score @p chests_between2 matches 8 run team modify ws_chest2 suffix {"text":" 8","color":"white"}
+
+execute if score @p chests_behind matches 0 run team modify ws_behind color gray
+execute if score @p chests_behind matches 0 run team modify ws_behind prefix {"text":"Chests ","color":"gray"}
+execute if score @p chests_behind matches 1.. run team modify ws_behind color gold
+execute if score @p chests_behind matches 1.. run team modify ws_behind prefix {"text":"Chests ","color":"gold"}
 
 execute if score @p chests_behind matches 0 run team modify ws_behind suffix {"text":" 0","color":"white"}
 execute if score @p chests_behind matches 1 run team modify ws_behind suffix {"text":" 1","color":"white"}

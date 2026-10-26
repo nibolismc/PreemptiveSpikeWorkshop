@@ -5,14 +5,13 @@ effect give @a minecraft:resistance 999999 255 true
 
 # DEFAULT HOTBAR
 
+# Mob spawners
+execute as @e[type=item,nbt={Item:{id:"minecraft:spawner"}}] at @s if score @p[distance=..2] hotbar_index matches 1..3 run function practice:drop/spawners
+execute as @e[type=item,nbt={Item:{id:"minecraft:spawner"}}] at @s if score @p[distance=..2] hotbar_index matches 10 run kill @s
+
 # Chests layers
 execute as @e[type=item,nbt={Item:{id:"minecraft:chest"}}] at @s if score @p[distance=..2] hotbar_index matches 1..3 run function practice:drop/chest_layers
 execute as @e[type=item,nbt={Item:{id:"minecraft:chest"}}] at @s if entity @p[distance=..2] run kill @s
-
-# Mob spawners
-execute as @e[type=item,nbt={Item:{id:"minecraft:spawner"}}] at @s if score @p[distance=..2] hotbar_index matches 1..3 run function practice:drop/spawners
-execute as @e[type=item,nbt={Item:{id:"minecraft:spawner"}}] at @s if score @p[distance=..2] hotbar_index matches 1..3 run kill @s
-
 
 # Drop for info
 execute as @e[type=item,nbt={Item:{id:"minecraft:book"}}] at @s if score @p[distance=..2] hotbar_index matches 1..3 run function practice:drop/info
@@ -22,6 +21,15 @@ execute as @e[type=item,nbt={Item:{id:"minecraft:book"}}] at @s if score @p[dist
 execute as @e[type=item,nbt={Item:{id:"minecraft:oak_door"}}] at @s if entity @p run function practice:drop/exit
 execute as @e[type=item,nbt={Item:{id:"minecraft:oak_door"}}] at @s if entity @p run kill @s
 
+# MOB SPAWNERS
+execute as @e[type=item,nbt={Item:{tag:{SpawnerID:1}}}] at @s if entity @p[distance=..2] run function practice:drop/spawner1
+execute as @e[type=item,nbt={Item:{tag:{SpawnerID:1}}}] at @s if entity @p[distance=..2] run kill @s
+
+execute as @e[type=item,nbt={Item:{tag:{SpawnerID:2}}}] at @s if entity @p[distance=..2] run function practice:drop/spawner2
+execute as @e[type=item,nbt={Item:{tag:{SpawnerID:2}}}] at @s if entity @p[distance=..2] run kill @s
+
+execute as @e[type=item,nbt={Item:{tag:{SpawnerID:3}}}] at @s if entity @p[distance=..2] run function practice:drop/spawner3
+execute as @e[type=item,nbt={Item:{tag:{SpawnerID:3}}}] at @s if entity @p[distance=..2] run kill @s
 
 # CHEST LAYERS
 execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"Chests in front","color":"gold","italic":false}'}}}}] at @s if entity @p[distance=..2,scores={sneak_check=..0}] run function practice:drop/chest_in_front
@@ -91,30 +99,23 @@ execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name
 
 # SPAWNER HOTBAR
 
-# Silverfish Spawner
-execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"Silverfish Spawner","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 1..3 run function practice:drop/silverfish
-execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"Silverfish Spawner","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 1..3 run kill @s
+execute as @e[type=item,nbt={Item:{tag:{spawneridx:0}}}] at @s if score @p[distance=..2] hotbar_index matches 1..3 run function practice:drop/silverfish
+execute as @e[type=item,nbt={Item:{tag:{spawneridx:0}}}] at @s if score @p[distance=..2] hotbar_index matches 1..3 run kill @s
 
-# Cave Spider Spawner
-execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"Cave Spider Spawner","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 1..3 run function practice:drop/cave_spider
-execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"Cave Spider Spawner","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 1..3 run kill @s
+execute as @e[type=item,nbt={Item:{tag:{spawneridx:1}}}] at @s if score @p[distance=..2] hotbar_index matches 1..3 run function practice:drop/cave_spider
+execute as @e[type=item,nbt={Item:{tag:{spawneridx:1}}}] at @s if score @p[distance=..2] hotbar_index matches 1..3 run kill @s
 
-# Spider Spawner
-execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"Spider Spawner","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 1..3 run function practice:drop/spider
-execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"Spider Spawner","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 1..3 run kill @s
+execute as @e[type=item,nbt={Item:{tag:{spawneridx:2}}}] at @s if score @p[distance=..2] hotbar_index matches 1..3 run function practice:drop/spider
+execute as @e[type=item,nbt={Item:{tag:{spawneridx:2}}}] at @s if score @p[distance=..2] hotbar_index matches 1..3 run kill @s
 
-# Skeleton Spawner
-execute as @e[type=item,nbt={Item:{id:"minecraft:skeleton_skull",tag:{display:{Name:'{"text":"Skeleton Spawner","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 1..3 run function practice:drop/skeleton
-execute as @e[type=item,nbt={Item:{id:"minecraft:skeleton_skull",tag:{display:{Name:'{"text":"Skeleton Spawner","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 1..3 run kill @s
+execute as @e[type=item,nbt={Item:{tag:{spawneridx:3}}}] at @s if score @p[distance=..2] hotbar_index matches 1..3 run function practice:drop/skeleton
+execute as @e[type=item,nbt={Item:{tag:{spawneridx:3}}}] at @s if score @p[distance=..2] hotbar_index matches 1..3 run kill @s
 
-# Zombie Spawner
-execute as @e[type=item,nbt={Item:{id:"minecraft:zombie_head",tag:{display:{Name:'{"text":"Zombie Spawner","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 1..3 run function practice:drop/zombie
-execute as @e[type=item,nbt={Item:{id:"minecraft:zombie_head",tag:{display:{Name:'{"text":"Zombie Spawner","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 1..3 run kill @s
+execute as @e[type=item,nbt={Item:{tag:{spawneridx:4}}}] at @s if score @p[distance=..2] hotbar_index matches 1..3 run function practice:drop/zombie
+execute as @e[type=item,nbt={Item:{tag:{spawneridx:4}}}] at @s if score @p[distance=..2] hotbar_index matches 1..3 run kill @s
 
-# None
-execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"No Spawner","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 1..3 run function practice:drop/none
-execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"No Spawner","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 1..3 run kill @s
-
+execute as @e[type=item,nbt={Item:{tag:{spawneridx:5}}}] at @s if score @p[distance=..2] hotbar_index matches 1..3 run function practice:drop/none
+execute as @e[type=item,nbt={Item:{tag:{spawneridx:5}}}] at @s if score @p[distance=..2] hotbar_index matches 1..3 run kill @s
 
 # Back
 execute as @e[type=item,nbt={Item:{id:"minecraft:black_banner",tag:{display:{Name:'{"text":"Back","color":"gray","italic":false}'}}}}] at @s if entity @p[distance=..2] run function practice:drop/back
@@ -337,6 +338,9 @@ execute as @a[scores={actionbar=11}] run title @s actionbar {"text":"Chest layer
 execute as @a[scores={actionbar=12}] run title @s actionbar {"text":"Chest layers/between #1","color":"gold"}
 execute as @a[scores={actionbar=13}] run title @s actionbar {"text":"Chest layers/between #2","color":"gold"}
 execute as @a[scores={actionbar=14}] run title @s actionbar {"text":"Chest layers/behind","color":"gold"}
+execute as @a[scores={actionbar=15}] run title @s actionbar {"text":"Mob spawners/Spawner #1","color":"aqua"}
+execute as @a[scores={actionbar=16}] run title @s actionbar {"text":"Mob spawners/Spawner #2","color":"aqua"}
+execute as @a[scores={actionbar=17}] run title @s actionbar {"text":"Mob spawners/Spawner #3","color":"aqua"}
 
 #kill items
 
