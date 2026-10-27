@@ -129,6 +129,27 @@ execute as @e[type=item,nbt={Item:{tag:{spawneridx:5}}}] at @s if score @p[dista
 execute as @e[type=item,nbt={Item:{id:"minecraft:black_banner",tag:{display:{Name:'{"text":"Back","color":"gray","italic":false}'}}}}] at @s if entity @p[distance=..2] run function practice:drop/back
 execute as @e[type=item,nbt={Item:{id:"minecraft:black_banner",tag:{display:{Name:'{"text":"Back","color":"gray","italic":false}'}}}}] at @s if entity @p[distance=..2] run kill @s
 
+# T VAL HOTBAR
+
+# 30
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"30","color":"white","italic":false}'}}}}] at @s if entity @p[distance=..2] run function practice:drop/tval_30
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"30","color":"white","italic":false}'}}}}] at @s if entity @p[distance=..2] run kill @s
+
+# 70
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"70","color":"white","italic":false}'}}}}] at @s if entity @p[distance=..2] run function practice:drop/tval_70
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"70","color":"white","italic":false}'}}}}] at @s if entity @p[distance=..2] run kill @s
+
+# 100
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"100","color":"white","italic":false}'}}}}] at @s if entity @p[distance=..2] run function practice:drop/tval_100
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"100","color":"white","italic":false}'}}}}] at @s if entity @p[distance=..2] run kill @s
+
+# fluctuate
+execute as @e[type=item,nbt={Item:{id:"minecraft:lime_concrete",tag:{display:{Name:'{"text":"fluctuate","color":"green","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 15 run function practice:drop/fluctuate
+execute as @e[type=item,nbt={Item:{id:"minecraft:lime_concrete",tag:{display:{Name:'{"text":"fluctuate","color":"green","italic":false}'}}}}] at @s run kill @s
+
+execute as @e[type=item,nbt={Item:{id:"minecraft:red_terracotta",tag:{display:{Name:'{"text":"fluctuate","color":"red","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 15 run function practice:drop/fluctuate
+execute as @e[type=item,nbt={Item:{id:"minecraft:red_terracotta",tag:{display:{Name:'{"text":"fluctuate","color":"red","italic":false}'}}}}] at @s run kill @s
+
 
 # CHEST HOTBAR
 
@@ -304,8 +325,6 @@ execute as @e[type=item,nbt={Item:{id:"minecraft:red_banner",tag:{display:{Name:
 execute as @e[type=item,nbt={Item:{id:"minecraft:red_banner",tag:{display:{Name:'{"text":"Quit","color":"red","italic":false}'}}}}] at @s run kill @s
 
 
-scoreboard players set @a sneak_check 0
-
 #HOTBAR INDEX
 
 execute as @a[scores={hotbar_index=0}] run function practice:hotbar/empty
@@ -329,6 +348,11 @@ execute as @a[scores={hotbar_index=99}] run function practice:hotbar/loading
 execute as @a[scores={hotbar_index=1..3}] run function practice:place_starterstaircase
 execute as @a[scores={hotbar_index=10..12}] run function practice:place_starterstaircase
 execute as @a[scores={hotbar_index=14..15}] run function practice:place_starterstaircase
+
+execute as @a[scores={hotbar_index=1..3}] run execute if score #t_value_fluctuate t_value matches 1 run function practice:ws_tvalue_fluctuate
+execute as @a[scores={hotbar_index=10..12}] run execute if score #t_value_fluctuate t_value matches 1 run function practice:ws_tvalue_fluctuate
+execute as @a[scores={hotbar_index=14..15}] run execute if score #t_value_fluctuate t_value matches 1 run function practice:ws_tvalue_fluctuate
+
 
 #during spikequiz
 execute as @a[scores={hotbar_index=4..9}] run function practice:place_starterstaircase_quiz
@@ -360,7 +384,11 @@ execute as @a[scores={actionbar=16}] run title @s actionbar {"text":"Mob spawner
 execute as @a[scores={actionbar=17}] run title @s actionbar {"text":"Mob spawners/Spawner #3","color":"aqua"}
 execute as @a[scores={actionbar=18}] run title @s actionbar {"text":"Settings/Overlapping spikes","color":"dark_aqua"}
 execute as @a[scores={actionbar=19}] run title @s actionbar {"text":"Entities","color":"light_purple"}
-execute as @a[scores={actionbar=20}] run title @s actionbar {"text":"T value","color":"white"}
+execute as @a[scores={actionbar=20}] run title @s actionbar [{"text":"T: ","color":"white"}, {"score":{"name":"#t_value","objective":"t_value"},"color":"white"}]
+
+#checks
+scoreboard players set @a sneak_check 0
+scoreboard players set @a move_check 0
 
 #kill items
 
@@ -380,3 +408,5 @@ kill @e[tag=ui_trash]
 
 tp @e[type=chicken] ~ ~-10 ~
 kill @e[type=chicken]
+
+kill @e[type=item]

@@ -1,3 +1,6 @@
+scoreboard objectives add const dummy
+scoreboard players set #-1 const -1
+
 scoreboard objectives add hotbar_index dummy
 scoreboard players set @a hotbar_index 0
 
@@ -8,6 +11,7 @@ scoreboard players set @a actionbar 0
 
 scoreboard objectives add deaths deathCount
 
+scoreboard objectives add move_check minecraft.custom:minecraft.walk_one_cm
 scoreboard objectives add sneak_check minecraft.custom:minecraft.sneak_time
 
 #chests amount
@@ -136,6 +140,15 @@ scoreboard players set #between1 chestlayer_state 0
 scoreboard players set #between2 chestlayer_state 0
 scoreboard players set #behind chestlayer_state 1
 
+#Tvalue
+scoreboard objectives add t_value dummy
+scoreboard players set #t_value t_value 70
+scoreboard players set #t_value_diff t_value 0
+scoreboard players set #t_value_tmp t_value 0
+
+function practice:drop/tval_70
+
+scoreboard players set #t_value_fluctuate t_value 0
 
 #Scoreboard
 scoreboard objectives remove workshop_sb
