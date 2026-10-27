@@ -11,5 +11,6 @@ execute as @a[scores={hotbar_index=6,number_of_rounds=2..100}] run scoreboard pl
 
 execute as @a[scores={hotbar_index=6,number_of_rounds=101}] run scoreboard players set @a number_of_rounds 100
 
+execute if entity @a[scores={hotbar_index=13}] if score #spikes quiz_cfg matches 2.. run scoreboard players remove #spikes quiz_cfg 1
 
 function practice:updatebossbar

@@ -1,5 +1,5 @@
-execute if score @p quiz_spawner_idx matches 0 run scoreboard players set @a answer_correct 0
-execute unless score @p quiz_spawner_idx matches 0 run scoreboard players set @a answer_correct 1
+execute if score @p quiz_real matches 1 run scoreboard players set @a answer_correct 0
+execute unless score @p quiz_real matches 1 run scoreboard players set @a answer_correct 1
 
 #Show round results
 execute as @a[scores={answer_correct=0}] if score #state round_result matches 1 run tellraw @s {"text":"Wrong!","color":"red"}
@@ -11,13 +11,7 @@ execute as @a[scores={answer_correct=1}] if score #state round_result matches 1 
 execute as @a if score #state round_result matches 0 run playsound minecraft:entity.item.pickup player @s ~ ~ ~ 1 0.8
 
 #Show correct answers
-execute as @a[scores={quiz_spawner_idx=0}] if score #state corr_answer matches 1 run tellraw @s ["",{"text":"Answer:\n\n","color":"yellow","underlined":"true"},{"text":"  Chests in front: ","color":"white"},{"score":{"name":"@s","objective":"quiz_front_idx"},"color":"gold"},{"text":"\n  Spawner:          ","color":"white"},{"text":"Silverfish","color":"aqua"},{"text":"\n  Chests behind:   ","color":"white"},{"score":{"name":"@s","objective":"quiz_beh_idx"},"color":"gold"}]
-execute as @a[scores={quiz_spawner_idx=1}] if score #state corr_answer matches 1 run tellraw @s ["",{"text":"Answer:\n\n","color":"yellow","underlined":"true"},{"text":"  Chests in front: ","color":"white"},{"score":{"name":"@s","objective":"quiz_front_idx"},"color":"gold"},{"text":"\n  Spawner:          ","color":"white"},{"text":"Cave Spider","color":"light_purple"},{"text":"\n  Chests behind:   ","color":"white"},{"score":{"name":"@s","objective":"quiz_beh_idx"},"color":"gold"}]
-execute as @a[scores={quiz_spawner_idx=2}] if score #state corr_answer matches 1 run tellraw @s ["",{"text":"Answer:\n\n","color":"yellow","underlined":"true"},{"text":"  Chests in front: ","color":"white"},{"score":{"name":"@s","objective":"quiz_front_idx"},"color":"gold"},{"text":"\n  Spawner:          ","color":"white"},{"text":"Spider","color":"dark_purple"},{"text":"\n  Chests behind:   ","color":"white"},{"score":{"name":"@s","objective":"quiz_beh_idx"},"color":"gold"}]
-execute as @a[scores={quiz_spawner_idx=3}] if score #state corr_answer matches 1 run tellraw @s ["",{"text":"Answer:\n\n","color":"yellow","underlined":"true"},{"text":"  Chests in front: ","color":"white"},{"score":{"name":"@s","objective":"quiz_front_idx"},"color":"gold"},{"text":"\n  Spawner:          ","color":"white"},{"text":"Skeleton","color":"dark_purple"},{"text":"\n  Chests behind:   ","color":"white"},{"score":{"name":"@s","objective":"quiz_beh_idx"},"color":"gold"}]
-execute as @a[scores={quiz_spawner_idx=4}] if score #state corr_answer matches 1 run tellraw @s ["",{"text":"Answer:\n\n","color":"yellow","underlined":"true"},{"text":"  Chests in front: ","color":"white"},{"score":{"name":"@s","objective":"quiz_front_idx"},"color":"gold"},{"text":"\n  Spawner:          ","color":"white"},{"text":"Zombie","color":"dark_purple"},{"text":"\n  Chests behind:   ","color":"white"},{"score":{"name":"@s","objective":"quiz_beh_idx"},"color":"gold"}]
-execute as @a[scores={quiz_spawner_idx=5}] if score #state corr_answer matches 1 run tellraw @s ["",{"text":"Answer:\n\n","color":"yellow","underlined":"true"},{"text":"  Chests in front: ","color":"white"},{"score":{"name":"@s","objective":"quiz_front_idx"},"color":"gold"},{"text":"\n  Spawner:          ","color":"white"},{"text":"None","color":"gray"},{"text":"\n  Chests behind:   ","color":"white"},{"score":{"name":"@s","objective":"quiz_beh_idx"},"color":"gold"}]
-execute as @a if score #state corr_answer matches 1 run tellraw @s [{"text":" "}]
+function practice:quiz/show_answer
 
 scoreboard players set @a quiz_guess 0
 function practice:quiz/record_round

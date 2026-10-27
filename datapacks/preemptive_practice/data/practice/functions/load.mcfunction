@@ -191,4 +191,24 @@ setblock -917 34 1981 minecraft:air destroy
 scoreboard players set front: workshop_sb 7
 scoreboard players set behind: workshop_sb 1
 
+#overlapping spikes (quiz)
+scoreboard objectives add quiz_cfg dummy
+execute unless score #spikes quiz_cfg matches 1.. run scoreboard players set #spikes quiz_cfg 1
+scoreboard objectives add quiz_real dummy
+scoreboard objectives add quiz_sp2_idx dummy
+scoreboard objectives add quiz_sp3_idx dummy
+scoreboard objectives add quiz_b1_idx dummy
+scoreboard objectives add quiz_b2_idx dummy
+scoreboard players set @a quiz_real 0
+scoreboard players set @a quiz_sp2_idx 5
+scoreboard players set @a quiz_sp3_idx 5
+scoreboard players set @a quiz_b1_idx 0
+scoreboard players set @a quiz_b2_idx 0
+
+bossbar add practice:overlap {"text":"Maximum amount of spawners","color":"dark_aqua"}
+bossbar set practice:overlap players @a
+bossbar set practice:overlap max 3
+bossbar set practice:overlap color blue
+bossbar set practice:overlap visible false
+
 function practice:updatebossbar

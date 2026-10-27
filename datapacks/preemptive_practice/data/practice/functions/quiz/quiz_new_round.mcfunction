@@ -10,12 +10,13 @@ scoreboard players set #result random 0
 scoreboard players set @a quiz_front 0
 scoreboard players set @a quiz_behind 0
 
-function practice:quiz/chests_front
+scoreboard players set @a quiz_b1_idx 0
+scoreboard players set @a quiz_b2_idx 0
+scoreboard players set @a quiz_sp2_idx 5
+scoreboard players set @a quiz_sp3_idx 5
 
-function practice:quiz/chests_behind
-
-function practice:quiz/choose_spawner
-execute as @a[scores={quiz_spawner_idx=2..4}] if score #force_2_ch quiz_tmp matches 1 run function practice:quiz/force_2_ch
+execute if score #spikes quiz_cfg matches ..1 run function practice:quiz/gen_single
+execute if score #spikes quiz_cfg matches 2.. run function practice:quiz/gen_multi
 
 kill @e[type=minecraft:experience_orb]
 kill @e[type=item,nbt={Item:{id:"minecraft:chest"}}]

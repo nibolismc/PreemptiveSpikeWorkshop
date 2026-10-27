@@ -12,4 +12,6 @@ execute as @a[scores={hotbar_index=6,number_of_rounds=..99}] run scoreboard play
 
 execute as @a[scores={hotbar_index=6}] store result bossbar practice:round value run scoreboard players get @s number_of_rounds
 
+execute if entity @a[scores={hotbar_index=13}] if score #spikes quiz_cfg matches ..2 run scoreboard players add #spikes quiz_cfg 1
+
 function practice:updatebossbar

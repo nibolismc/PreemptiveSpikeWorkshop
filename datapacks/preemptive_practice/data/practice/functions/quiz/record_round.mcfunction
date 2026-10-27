@@ -7,12 +7,16 @@ execute store result storage practice:quiz new.spawner int 1 run scoreboard play
 execute store result storage practice:quiz new.guess byte 1 run scoreboard players get @p quiz_guess
 execute store result storage practice:quiz new.ok byte 1 run scoreboard players get @p answer_correct
 
-execute if score @p quiz_spawner_idx matches 0 run data modify storage practice:quiz new.sp_txt set value '{"text":"Silverfish","color":"aqua"}'
-execute if score @p quiz_spawner_idx matches 1 run data modify storage practice:quiz new.sp_txt set value '{"text":"Cave Spider","color":"light_purple"}'
-execute if score @p quiz_spawner_idx matches 2 run data modify storage practice:quiz new.sp_txt set value '{"text":"Spider","color":"dark_purple"}'
-execute if score @p quiz_spawner_idx matches 3 run data modify storage practice:quiz new.sp_txt set value '{"text":"Skeleton","color":"dark_purple"}'
-execute if score @p quiz_spawner_idx matches 4 run data modify storage practice:quiz new.sp_txt set value '{"text":"Zombie","color":"dark_purple"}'
-execute if score @p quiz_spawner_idx matches 5 run data modify storage practice:quiz new.sp_txt set value '{"text":"None","color":"gray"}'
+function practice:quiz/fill_cur
+data modify storage practice:quiz new.sp_txt set from storage practice:quiz cur.s1
+data modify storage practice:quiz new.sp2_txt set from storage practice:quiz cur.s2
+data modify storage practice:quiz new.sp3_txt set from storage practice:quiz cur.s3
+
+execute store result storage practice:quiz new.spikes int 1 run scoreboard players get #spikes quiz_cfg
+execute store result storage practice:quiz new.b1 int 1 run scoreboard players get @p quiz_b1_idx
+execute store result storage practice:quiz new.b2 int 1 run scoreboard players get @p quiz_b2_idx
+execute store result storage practice:quiz new.sp2 int 1 run scoreboard players get @p quiz_sp2_idx
+execute store result storage practice:quiz new.sp3 int 1 run scoreboard players get @p quiz_sp3_idx
 
 execute if score @p quiz_guess matches 1 run data modify storage practice:quiz new.guess_txt set value '{"text":"Real","color":"green"}'
 execute if score @p quiz_guess matches 0 run data modify storage practice:quiz new.guess_txt set value '{"text":"Fake","color":"red"}'

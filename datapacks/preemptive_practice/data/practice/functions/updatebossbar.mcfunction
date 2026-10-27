@@ -75,3 +75,9 @@ execute if score @p chests_behind matches 5 run team modify ws_behind suffix {"t
 execute if score @p chests_behind matches 6 run team modify ws_behind suffix {"text":" 6","color":"white"}
 execute if score @p chests_behind matches 7 run team modify ws_behind suffix {"text":" 7","color":"white"}
 execute if score @p chests_behind matches 8 run team modify ws_behind suffix {"text":" 8","color":"white"}
+
+#maximum amount of spawners (shown in the whole quiz menu, hidden during the quiz)
+execute if entity @a[scores={hotbar_index=4..8}] run bossbar set practice:overlap name [{"text":"Maximum amount of spawners: ","color":"dark_aqua"},{"score":{"name":"#spikes","objective":"quiz_cfg"},"color":"white"}]
+execute if entity @a[scores={hotbar_index=13}] run bossbar set practice:overlap name [{"text":"Maximum amount of spawners: ","color":"dark_aqua"},{"score":{"name":"#spikes","objective":"quiz_cfg"},"color":"white"}]
+execute if entity @a[scores={hotbar_index=4..8}] store result bossbar practice:overlap value run scoreboard players get #spikes quiz_cfg
+execute if entity @a[scores={hotbar_index=13}] store result bossbar practice:overlap value run scoreboard players get #spikes quiz_cfg

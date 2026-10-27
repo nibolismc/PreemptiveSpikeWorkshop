@@ -13,6 +13,14 @@ execute as @e[type=item,nbt={Item:{id:"minecraft:spawner"}}] at @s if score @p[d
 execute as @e[type=item,nbt={Item:{id:"minecraft:chest"}}] at @s if score @p[distance=..2] hotbar_index matches 1..3 run function practice:drop/chest_layers
 execute as @e[type=item,nbt={Item:{id:"minecraft:chest"}}] at @s if entity @p[distance=..2] run kill @s
 
+# T Value
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"T value","color":"white","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 1 run function practice:drop/t_value
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"T value","color":"white","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 15 run kill @s
+
+# Entities
+execute as @e[type=item,nbt={Item:{id:"minecraft:armor_stand"}}] at @s if score @p[distance=..2] hotbar_index matches 1..3 run function practice:drop/armor_stand
+execute as @e[type=item,nbt={Item:{id:"minecraft:armor_stand"}}] at @s if entity @p[distance=..2] run kill @s
+
 # Drop for info
 execute as @e[type=item,nbt={Item:{id:"minecraft:book"}}] at @s if score @p[distance=..2] hotbar_index matches 1..3 run function practice:drop/info
 execute as @e[type=item,nbt={Item:{id:"minecraft:book"}}] at @s if score @p[distance=..2] hotbar_index matches 1..3 run kill @s
@@ -166,6 +174,10 @@ execute as @e[type=item,nbt={Item:{id:"minecraft:book"}}] at @s if score @p[dist
 execute as @e[type=item,nbt={Item:{id:"minecraft:oak_sign",tag:{display:{Name:'{"text":"Number of rounds","color":"gold","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 5 run function practice:drop/number_of_rounds
 execute as @e[type=item,nbt={Item:{id:"minecraft:oak_sign",tag:{display:{Name:'{"text":"Number of rounds","color":"gold","italic":false}'}}}}] at @s run kill @s
 
+# Overlapping spikes
+execute as @e[type=item,nbt={Item:{tag:{QuizSetting:"overlap"}}}] at @s if score @p[distance=..2] hotbar_index matches 5 run function practice:drop/quiz_overlap
+execute as @e[type=item,nbt={Item:{tag:{QuizSetting:"overlap"}}}] at @s run kill @s
+
 # Summary
 execute as @e[type=item,nbt={Item:{id:"minecraft:paper",tag:{display:{Name:'{"text":"Summary","color":"yellow","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 5 run function practice:drop/quiz_summary
 execute as @e[type=item,nbt={Item:{id:"minecraft:paper",tag:{display:{Name:'{"text":"Summary","color":"yellow","italic":false}'}}}}] at @s run kill @s
@@ -205,8 +217,8 @@ execute as @e[type=item,nbt={Item:{id:"minecraft:red_terracotta",tag:{display:{N
 # QUIZ ROUNDS HOTBAR
 
 # -10
-execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"-10","color":"red","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 6 run function practice:drop/minus_ten
-execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"-10","color":"red","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 6 run kill @s
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"-10","color":"red","italic":false}'}}}}] at @s if entity @p[distance=..2] run function practice:drop/minus_ten
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"-10","color":"red","italic":false}'}}}}] at @s if entity @p[distance=..2] run kill @s
 
 
 # -1
@@ -218,8 +230,8 @@ execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name
 execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"+1","color":"green","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 6 run kill @s
 
 # +10
-execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"+10","color":"green","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 6 run function practice:drop/plus_ten
-execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"+10","color":"green","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 6 run kill @s
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"+10","color":"green","italic":false}'}}}}] at @s if entity @p[distance=..2] run function practice:drop/plus_ten
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"+10","color":"green","italic":false}'}}}}] at @s if entity @p[distance=..2] run kill @s
 
 # Back
 #execute as @e[type=item,nbt={Item:{id:"minecraft:black_banner",tag:{display:{Name:'{"text":"Back","color":"gray","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 6 run function practice:drop/back
@@ -303,19 +315,24 @@ execute as @a[scores={hotbar_index=3}] run function practice:hotbar/numbers
 execute as @a[scores={hotbar_index=4}] run function practice:hotbar/quiz_default
 execute as @a[scores={hotbar_index=5}] run function practice:hotbar/quiz_settings
 execute as @a[scores={hotbar_index=6}] run function practice:hotbar/numbers2
-execute as @a[scores={hotbar_index=7}] run function practice:hotbar/quiz_summary
+#execute as @a[scores={hotbar_index=7}] run function practice:hotbar/quiz_summary
 execute as @a[scores={hotbar_index=8}] run function practice:hotbar/quiz_settings_spawners
 execute as @a[scores={hotbar_index=9}] run function practice:hotbar/quiz_game
 execute as @a[scores={hotbar_index=10}] run function practice:hotbar/spawners
 execute as @a[scores={hotbar_index=11}] run function practice:hotbar/chest_layers
+execute as @a[scores={hotbar_index=13}] run function practice:hotbar/quiz_overlap
+execute as @a[scores={hotbar_index=14}] run function practice:hotbar/entities
+execute as @a[scores={hotbar_index=15}] run function practice:hotbar/t_value
 execute as @a[scores={hotbar_index=99}] run function practice:hotbar/loading
 
 #during spikecheck
 execute as @a[scores={hotbar_index=1..3}] run function practice:place_starterstaircase
 execute as @a[scores={hotbar_index=10..12}] run function practice:place_starterstaircase
+execute as @a[scores={hotbar_index=14..15}] run function practice:place_starterstaircase
 
 #during spikequiz
-execute as @a[scores={hotbar_index=4..}] run function practice:place_starterstaircase_quiz
+execute as @a[scores={hotbar_index=4..9}] run function practice:place_starterstaircase_quiz
+execute as @a[scores={hotbar_index=13}] run function practice:place_starterstaircase_quiz
 
 #during lobby
 execute as @a[scores={hotbar_index=0}] run function practice:place_lobby
@@ -341,6 +358,9 @@ execute as @a[scores={actionbar=14}] run title @s actionbar {"text":"Chest layer
 execute as @a[scores={actionbar=15}] run title @s actionbar {"text":"Mob spawners/Spawner #1","color":"aqua"}
 execute as @a[scores={actionbar=16}] run title @s actionbar {"text":"Mob spawners/Spawner #2","color":"aqua"}
 execute as @a[scores={actionbar=17}] run title @s actionbar {"text":"Mob spawners/Spawner #3","color":"aqua"}
+execute as @a[scores={actionbar=18}] run title @s actionbar {"text":"Settings/Overlapping spikes","color":"dark_aqua"}
+execute as @a[scores={actionbar=19}] run title @s actionbar {"text":"Entities","color":"light_purple"}
+execute as @a[scores={actionbar=20}] run title @s actionbar {"text":"T value","color":"white"}
 
 #kill items
 
@@ -351,3 +371,12 @@ kill @e[type=item,nbt={Item:{id:"minecraft:crafting_table"}}]
 kill @e[type=item,nbt={Item:{id:"minecraft:target"}}]
 kill @e[type=item,nbt={Item:{id:"minecraft:torch"}}]
 kill @e[type=item,nbt={Item:{id:"minecraft:magenta_stained_glass_pane"}}]
+
+#kill entities
+kill @e[type=armor_stand]
+
+tp @e[tag=ui_trash] ~ ~-10 ~
+kill @e[tag=ui_trash]
+
+tp @e[type=chicken] ~ ~-10 ~
+kill @e[type=chicken]

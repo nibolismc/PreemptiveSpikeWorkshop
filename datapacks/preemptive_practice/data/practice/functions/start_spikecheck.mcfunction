@@ -15,6 +15,7 @@ bossbar set practice:mob_spawner visible false
 bossbar set practice:chests_behind visible false
 bossbar set practice:number_of_rounds visible false
 bossbar set practice:round visible false
+bossbar set practice:overlap visible false
 
 scoreboard objectives setdisplay sidebar workshop_sb
 

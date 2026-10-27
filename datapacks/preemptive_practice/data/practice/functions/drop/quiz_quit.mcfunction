@@ -4,6 +4,7 @@ playsound minecraft:entity.player.levelup player @a ~ ~ ~ 1 1
 particle minecraft:dust 1 0 1 1 ~ ~ ~1 0.5 0.5 0.5 0 30 force @a
 
 bossbar set practice:number_of_rounds visible true
+bossbar set practice:overlap visible true
 bossbar set practice:round visible false
 bossbar set practice:round value 1
 

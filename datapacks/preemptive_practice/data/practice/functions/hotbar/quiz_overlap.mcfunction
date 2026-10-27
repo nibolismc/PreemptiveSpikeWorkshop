@@ -1,0 +1,9 @@
+replaceitem entity @a hotbar.0 minecraft:player_head{display:{Name:'{"text":"-1","color":"red","italic":false}'},SkullOwner:{Id:[I;904,905,906,907],Name:"Red_Minus",Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNGU0YjhiOGQyMzYyYzg2NGUwNjIzMDE0ODdkOTRkMzI3MmE2YjU3MGFmYmY4MGMyYzViMTQ4Yzk1NDU3OWQ0NiJ9fX0="}]}}} 1
+replaceitem entity @a hotbar.1 minecraft:player_head{display:{Name:'{"text":"+1","color":"green","italic":false}'},SkullOwner:{Id:[I;908,909,910,911],Name:"Green_Plus",Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWZmMzE0MzFkNjQ1ODdmZjZlZjk4YzA2NzU4MTA2ODFmOGMxM2JmOTZmNTFkOWNiMDdlZDc4NTJiMmZmZDEifX19"}]}}} 1
+replaceitem entity @a hotbar.2 minecraft:air 1
+replaceitem entity @a hotbar.3 minecraft:air 1
+replaceitem entity @a hotbar.4 minecraft:air 1
+replaceitem entity @a hotbar.5 minecraft:air 1
+replaceitem entity @a hotbar.6 minecraft:air 1
+replaceitem entity @a hotbar.7 minecraft:air 1
+replaceitem entity @a hotbar.8 minecraft:black_banner{HideFlags:32,display:{Name:'{"text":"Back","color":"gray","italic":false}'},BlockEntityTag:{Patterns:[{Pattern:mr,Color:0},{Pattern:vhr,Color:0},{Pattern:br,Color:15},{Pattern:tr,Color:15},{Pattern:tts,Color:15},{Pattern:bts,Color:15},{Pattern:bo,Color:15}]}} 1

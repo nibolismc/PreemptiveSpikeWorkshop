@@ -1,6 +1,18 @@
+scoreboard players set #vn quiz_sum 1
+scoreboard players set #vb1 quiz_sum 0
+scoreboard players set #vb2 quiz_sum 0
+scoreboard players set #vsp2 quiz_sum 5
+scoreboard players set #vsp3 quiz_sum 5
 execute store result score #vfront quiz_sum run data get storage practice:quiz tmp[0].front
 execute store result score #vbeh quiz_sum run data get storage practice:quiz tmp[0].behind
 execute store result score #vsp quiz_sum run data get storage practice:quiz tmp[0].spawner
+execute store result score #vn quiz_sum run data get storage practice:quiz tmp[0].spikes
+execute store result score #vb1 quiz_sum run data get storage practice:quiz tmp[0].b1
+execute store result score #vb2 quiz_sum run data get storage practice:quiz tmp[0].b2
+execute store result score #vsp2 quiz_sum run data get storage practice:quiz tmp[0].sp2
+execute store result score #vsp3 quiz_sum run data get storage practice:quiz tmp[0].sp3
 
 tellraw @a ["",{"text":"#","color":"gray"},{"nbt":"tmp[0].n","storage":"practice:quiz","color":"gray"},{"text":" "},{"nbt":"tmp[0].guess_txt","storage":"practice:quiz","interpret":true},{"text":"   [view in Workshop]","color":"dark_green","clickEvent":{"action":"run_command","value":"/function practice:quiz/summary/view_workshop"},"hoverEvent":{"action":"show_text","contents":{"text":"Show this round in the Workshop","color":"gray"}}}]
-tellraw @a ["",{"text":"Answer:","color":"yellow","underlined":true},{"text":"\n\n  Chests in front: ","color":"white"},{"nbt":"tmp[0].front","storage":"practice:quiz","color":"gold"},{"text":"\n  Spawner: ","color":"white"},{"nbt":"tmp[0].sp_txt","storage":"practice:quiz","interpret":true},{"text":"\n  Chests behind: ","color":"white"},{"nbt":"tmp[0].behind","storage":"practice:quiz","color":"gold"},{"text":"\n"}]
+execute if score #vn quiz_sum matches ..1 run tellraw @a ["",{"text":"Answer:","color":"yellow","underlined":true},{"text":"\n\n  Chests in front: ","color":"white"},{"nbt":"tmp[0].front","storage":"practice:quiz","color":"gold"},{"text":"\n  Spawner: ","color":"white"},{"nbt":"tmp[0].sp_txt","storage":"practice:quiz","interpret":true},{"text":"\n  Chests behind: ","color":"white"},{"nbt":"tmp[0].behind","storage":"practice:quiz","color":"gold"},{"text":"\n"}]
+execute if score #vn quiz_sum matches 2 run tellraw @a ["",{"text":"Answer:","color":"yellow","underlined":true},{"text":"\n\n  Chests in front: ","color":"white"},{"nbt":"tmp[0].front","storage":"practice:quiz","color":"gold"},{"text":"\n  Spawner #1: ","color":"white"},{"nbt":"tmp[0].sp_txt","storage":"practice:quiz","interpret":true},{"text":"\n  Chests between #1: ","color":"white"},{"nbt":"tmp[0].b1","storage":"practice:quiz","color":"gold"},{"text":"\n  Spawner #2: ","color":"white"},{"nbt":"tmp[0].sp2_txt","storage":"practice:quiz","interpret":true},{"text":"\n  Chests behind: ","color":"white"},{"nbt":"tmp[0].behind","storage":"practice:quiz","color":"gold"},{"text":"\n"}]
+execute if score #vn quiz_sum matches 3 run tellraw @a ["",{"text":"Answer:","color":"yellow","underlined":true},{"text":"\n\n  Chests in front: ","color":"white"},{"nbt":"tmp[0].front","storage":"practice:quiz","color":"gold"},{"text":"\n  Spawner #1: ","color":"white"},{"nbt":"tmp[0].sp_txt","storage":"practice:quiz","interpret":true},{"text":"\n  Chests between #1: ","color":"white"},{"nbt":"tmp[0].b1","storage":"practice:quiz","color":"gold"},{"text":"\n  Spawner #2: ","color":"white"},{"nbt":"tmp[0].sp2_txt","storage":"practice:quiz","interpret":true},{"text":"\n  Chests between #2: ","color":"white"},{"nbt":"tmp[0].b2","storage":"practice:quiz","color":"gold"},{"text":"\n  Spawner #3: ","color":"white"},{"nbt":"tmp[0].sp3_txt","storage":"practice:quiz","interpret":true},{"text":"\n  Chests behind: ","color":"white"},{"nbt":"tmp[0].behind","storage":"practice:quiz","color":"gold"},{"text":"\n"}]

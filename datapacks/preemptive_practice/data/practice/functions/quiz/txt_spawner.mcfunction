@@ -1,0 +1,6 @@
+execute if score #t quiz_tmp matches 0 run data modify storage practice:quiz tx set value '{"text":"Silverfish","color":"aqua"}'
+execute if score #t quiz_tmp matches 1 run data modify storage practice:quiz tx set value '{"text":"Cave Spider","color":"light_purple"}'
+execute if score #t quiz_tmp matches 2 run data modify storage practice:quiz tx set value '{"text":"Spider","color":"dark_purple"}'
+execute if score #t quiz_tmp matches 3 run data modify storage practice:quiz tx set value '{"text":"Skeleton","color":"dark_purple"}'
+execute if score #t quiz_tmp matches 4 run data modify storage practice:quiz tx set value '{"text":"Zombie","color":"dark_purple"}'
+execute if score #t quiz_tmp matches 5 run data modify storage practice:quiz tx set value '{"text":"None","color":"gray"}'

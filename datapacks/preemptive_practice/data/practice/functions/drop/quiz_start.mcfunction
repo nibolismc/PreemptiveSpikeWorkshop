@@ -5,6 +5,7 @@ scoreboard players set @a hotbar_index 9
 scoreboard players set @a current_round 0
 
 bossbar set practice:number_of_rounds visible false
+bossbar set practice:overlap visible false
 bossbar set practice:round visible true
 
 scoreboard players set #total quiz_sum 0
