@@ -5,14 +5,16 @@ A Preemptive Spike Practice Map inspired by [Lama's Practice Map](https://www.me
 **Instructions:**
 
 * Drop items in the hotbar to navigate the menu.
+* Hover over items in the inventory for details.
 * Scan directly down mid (posZ / south).
 * Render Distance and Entity Distance don't matter on this practice map.
 
 ## Spike Workshop
 
 Configure your own spike by
-* changing the mob spawner and
-* changing the number of chests behind / in front of the spawner
+* placing/changing up to 3 mob spawners,
+* changing the number of chests around the spawners and
+* editing the T-value (total number of entities)
 
 through the menu.
 
@@ -22,7 +24,9 @@ Play a Quiz to test if you can differentiate a *Real Spike* from a *Fake Spike*.
 
 Customize
 * the number of rounds,
-* the fake spikes that show up during the quiz and
+* the fake spikes that show up during the quiz,
+* overlapping spikes,
+* the T-value and
 * more
 
 **Game Summary:**
