@@ -4,8 +4,8 @@ replaceitem entity @a hotbar.2 minecraft:player_head{display:{Name:'{"text":"30"
 replaceitem entity @a hotbar.3 minecraft:player_head{display:{Name:'{"text":"70","color":"white","italic":false}'},SkullOwner:{Id:[I;720,721,722,723],Name:"Dot_medium",Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTNjMzcwOWIzYjViZTE4NTQ3YTA4NzNmYmM3MjIzNjRjZWRlYzAwOTc2NDkzN2FjNmUxOGFjYzUyY2RkNTcyYiJ9fX0="}]}}}
 replaceitem entity @a hotbar.4 minecraft:player_head{display:{Name:'{"text":"100","color":"white","italic":false}'},SkullOwner:{Id:[I;630,631,632,633],Name:"Dot_large",Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTNkODNlNjQ0NDk4YjYyMjEyOTI2ZjU1MWYyYzI5ODYxMDFhYjExM2IyOWRkNGM2MjUzYjFhNjkyNDU4MmZiIn19fQ=="}]}}}
 
-execute if score #t_value_fluctuate t_value matches 1 run replaceitem entity @a hotbar.5 minecraft:lime_concrete{Enchantments:[{id:"minecraft:unbreaking",lvl:1s}],HideFlags:1,display:{Name:'{"text":"fluctuate","color":"green","italic":false}'}} 1
-execute if score #t_value_fluctuate t_value matches 0 run replaceitem entity @a hotbar.5 minecraft:red_terracotta{display:{Name:'{"text":"fluctuate","color":"red","italic":false}'}} 1
+execute if score #t_value_fluctuate t_value matches 1 run replaceitem entity @a hotbar.5 minecraft:lime_concrete{Enchantments:[{id:"minecraft:unbreaking",lvl:1s}],HideFlags:1,display:{Name:'{"text":"fluctuate","color":"green","italic":false}',Lore:['{"text":""}','{"text":"Slightly change the T-value","color":"white","italic":true}','{"text":"randomly over time","color":"white","italic":true}']}} 1
+execute if score #t_value_fluctuate t_value matches 0 run replaceitem entity @a hotbar.5 minecraft:red_terracotta{display:{Name:'{"text":"fluctuate","color":"red","italic":false}',Lore:['{"text":""}','{"text":"Slightly change the T-value","color":"white","italic":true}','{"text":"randomly over time","color":"white","italic":true}']}} 1
 
 replaceitem entity @a hotbar.6 minecraft:air 1
 replaceitem entity @a hotbar.7 minecraft:air 1

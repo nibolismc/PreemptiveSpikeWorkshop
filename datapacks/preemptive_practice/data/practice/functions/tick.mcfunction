@@ -248,6 +248,13 @@ execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name
 execute as @e[type=item,nbt={Item:{id:"minecraft:redstone_lamp",tag:{display:{Name:'{"text":"More settings","color":"yellow","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 5 run function practice:drop/more_settings
 execute as @e[type=item,nbt={Item:{id:"minecraft:redstone_lamp",tag:{display:{Name:'{"text":"More settings","color":"yellow","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 18 run kill @s
 
+#Show summary
+execute as @e[type=item,nbt={Item:{id:"minecraft:lime_concrete",tag:{display:{Name:'{"text":"Show summary","color":"green","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 18 run function practice:drop/quiz_summary_state
+execute as @e[type=item,nbt={Item:{id:"minecraft:lime_concrete",tag:{display:{Name:'{"text":"Show summary","color":"green","italic":false}'}}}}] at @s run kill @s
+
+execute as @e[type=item,nbt={Item:{id:"minecraft:red_terracotta",tag:{display:{Name:'{"text":"Show summary","color":"red","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 18 run function practice:drop/quiz_summary_state
+execute as @e[type=item,nbt={Item:{id:"minecraft:red_terracotta",tag:{display:{Name:'{"text":"Show summary","color":"red","italic":false}'}}}}] at @s run kill @s
+
 #Show round result
 execute as @e[type=item,nbt={Item:{id:"minecraft:lime_concrete",tag:{display:{Name:'{"text":"Show round results","color":"green","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 18 run function practice:drop/quiz_round_result
 execute as @e[type=item,nbt={Item:{id:"minecraft:lime_concrete",tag:{display:{Name:'{"text":"Show round results","color":"green","italic":false}'}}}}] at @s run kill @s
@@ -346,14 +353,6 @@ execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name
 # None
 execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"No Spawner","italic":false,"color":"red"}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 8 run function practice:drop/set_none
 execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"No Spawner","italic":false,"color":"red"}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 8 run kill @s
-
-
-# QUIZ SUMMARY
-execute as @e[type=item,nbt={Item:{id:"minecraft:lime_concrete",tag:{display:{Name:'{"text":"Show summary","color":"green","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 18 run function practice:drop/quiz_summary_state
-execute as @e[type=item,nbt={Item:{id:"minecraft:lime_concrete",tag:{display:{Name:'{"text":"Show summary","color":"green","italic":false}'}}}}] at @s run kill @s
-
-execute as @e[type=item,nbt={Item:{id:"minecraft:red_terracotta",tag:{display:{Name:'{"text":"Show summary","color":"red","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 18 run function practice:drop/quiz_summary_state
-execute as @e[type=item,nbt={Item:{id:"minecraft:red_terracotta",tag:{display:{Name:'{"text":"Show summary","color":"red","italic":false}'}}}}] at @s run kill @s
 
 
 # QUIZ GAME HOTBAR
