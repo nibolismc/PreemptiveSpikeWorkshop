@@ -28,3 +28,9 @@ setblock -409 34 1983 minecraft:air destroy
 
 kill @e[type=minecraft:experience_orb]
 kill @e[type=item,nbt={Item:{id:"minecraft:chest"}}]
+
+scoreboard players set #qt_value_diff t_value 0 
+execute positioned 402.5 39 1960.00 run execute as @e[type=minecraft:creeper,distance=..100] run scoreboard players add #qt_value_diff t_value 1
+function practice:q_update_tvalue
+execute positioned -402.5 49.00 1960.00 run tp @e[type=creeper, distance=..100] 9 9 9
+execute positioned 9 9 9 run kill @e[type=creeper, distance=..1]

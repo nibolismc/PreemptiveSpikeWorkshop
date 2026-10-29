@@ -7,4 +7,7 @@ execute as @a[scores={hotbar_index=3}] run scoreboard players set @s hotbar_inde
 execute as @a[scores={hotbar_index=5}] run scoreboard players set @s hotbar_index 4
 execute as @a[scores={hotbar_index=6..8}] run scoreboard players set @s hotbar_index 5
 execute as @a[scores={hotbar_index=14..15}] run scoreboard players set @s hotbar_index 1
+execute as @a[scores={hotbar_index=17}] run scoreboard players set @s hotbar_index 5
+execute as @a[scores={hotbar_index=16}] run scoreboard players set @s hotbar_index 14
+execute as @a[scores={hotbar_index=18}] run scoreboard players set @s hotbar_index 5
 execute as @a[scores={hotbar_index=13}] run function practice:quiz/overlap_leave

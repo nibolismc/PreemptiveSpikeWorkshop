@@ -19,4 +19,17 @@ execute as @a[scores={hotbar_index=15}] if score #t_value t_value matches 249 ru
 execute as @a[scores={hotbar_index=15}] if score #t_value t_value matches 250.. run scoreboard players set #t_value_diff t_value 0
 execute as @a[scores={hotbar_index=15}] run function practice:ws_update_tvalue
 
+execute as @a[scores={hotbar_index=17}] if score #qt_value t_value matches ..240 run scoreboard players set #qt_value_diff t_value 10
+execute as @a[scores={hotbar_index=17}] if score #qt_value t_value matches 241 run scoreboard players set #qt_value_diff t_value 9
+execute as @a[scores={hotbar_index=17}] if score #qt_value t_value matches 242 run scoreboard players set #qt_value_diff t_value 8
+execute as @a[scores={hotbar_index=17}] if score #qt_value t_value matches 243 run scoreboard players set #qt_value_diff t_value 7
+execute as @a[scores={hotbar_index=17}] if score #qt_value t_value matches 244 run scoreboard players set #qt_value_diff t_value 6
+execute as @a[scores={hotbar_index=17}] if score #qt_value t_value matches 245 run scoreboard players set #qt_value_diff t_value 5
+execute as @a[scores={hotbar_index=17}] if score #qt_value t_value matches 246 run scoreboard players set #qt_value_diff t_value 4
+execute as @a[scores={hotbar_index=17}] if score #qt_value t_value matches 247 run scoreboard players set #qt_value_diff t_value 3
+execute as @a[scores={hotbar_index=17}] if score #qt_value t_value matches 248 run scoreboard players set #qt_value_diff t_value 2
+execute as @a[scores={hotbar_index=17}] if score #qt_value t_value matches 249 run scoreboard players set #qt_value_diff t_value 1
+execute as @a[scores={hotbar_index=17}] if score #qt_value t_value matches 250.. run scoreboard players set #qt_value_diff t_value 0
+execute as @a[scores={hotbar_index=17}] run function practice:q_update_tvalue
+
 function practice:updatebossbar

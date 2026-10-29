@@ -17,9 +17,9 @@ execute as @e[type=item,nbt={Item:{id:"minecraft:chest"}}] at @s if entity @p[di
 execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"T value","color":"white","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 1 run function practice:drop/t_value
 execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"T value","color":"white","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 15 run kill @s
 
-# Entities
-execute as @e[type=item,nbt={Item:{id:"minecraft:armor_stand"}}] at @s if score @p[distance=..2] hotbar_index matches 1..3 run function practice:drop/armor_stand
-execute as @e[type=item,nbt={Item:{id:"minecraft:armor_stand"}}] at @s if entity @p[distance=..2] run kill @s
+# # Entities
+# execute as @e[type=item,nbt={Item:{id:"minecraft:armor_stand"}}] at @s if score @p[distance=..2] hotbar_index matches 1..3 run function practice:drop/armor_stand
+# execute as @e[type=item,nbt={Item:{id:"minecraft:armor_stand"}}] at @s if entity @p[distance=..2] run kill @s
 
 # Drop for info
 execute as @e[type=item,nbt={Item:{id:"minecraft:book"}}] at @s if score @p[distance=..2] hotbar_index matches 1..3 run function practice:drop/info
@@ -144,12 +144,45 @@ execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name
 execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"100","color":"white","italic":false}'}}}}] at @s if entity @p[distance=..2] run kill @s
 
 # fluctuate
-execute as @e[type=item,nbt={Item:{id:"minecraft:lime_concrete",tag:{display:{Name:'{"text":"fluctuate","color":"green","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 15 run function practice:drop/fluctuate
+execute as @e[type=item,nbt={Item:{id:"minecraft:lime_concrete",tag:{display:{Name:'{"text":"fluctuate","color":"green","italic":false}'}}}}] at @s if entity @p[distance=..2] run function practice:drop/fluctuate
 execute as @e[type=item,nbt={Item:{id:"minecraft:lime_concrete",tag:{display:{Name:'{"text":"fluctuate","color":"green","italic":false}'}}}}] at @s run kill @s
 
-execute as @e[type=item,nbt={Item:{id:"minecraft:red_terracotta",tag:{display:{Name:'{"text":"fluctuate","color":"red","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 15 run function practice:drop/fluctuate
+execute as @e[type=item,nbt={Item:{id:"minecraft:red_terracotta",tag:{display:{Name:'{"text":"fluctuate","color":"red","italic":false}'}}}}] at @s if entity @p[distance=..2] run function practice:drop/fluctuate
 execute as @e[type=item,nbt={Item:{id:"minecraft:red_terracotta",tag:{display:{Name:'{"text":"fluctuate","color":"red","italic":false}'}}}}] at @s run kill @s
 
+#quiz/randomize
+execute as @e[type=item,nbt={Item:{id:"minecraft:lime_concrete",tag:{display:{Name:'{"text":"randomize each round","color":"green","italic":false}'}}}}] at @s if entity @p[distance=..2] run function practice:drop/quiz_randomize_t
+execute as @e[type=item,nbt={Item:{id:"minecraft:lime_concrete",tag:{display:{Name:'{"text":"randomize each round","color":"green","italic":false}'}}}}] at @s run kill @s
+
+execute as @e[type=item,nbt={Item:{id:"minecraft:red_terracotta",tag:{display:{Name:'{"text":"randomize each round","color":"red","italic":false}'}}}}] at @s if entity @p[distance=..2] run function practice:drop/quiz_randomize_t
+execute as @e[type=item,nbt={Item:{id:"minecraft:red_terracotta",tag:{display:{Name:'{"text":"randomize each round","color":"red","italic":false}'}}}}] at @s run kill @s
+
+
+# ENTITIES HOTBAR
+
+# execute as @e[type=item,nbt={Item:{id:"minecraft:zombie_spawn_egg",tag:{display:{Name:'{"text":"Zombie","color":"light_purple","italic":false}'}}}}] at @s if entity @p[distance=..2] run function practice:drop/zombie_egg
+# execute as @e[type=item,nbt={Item:{id:"minecraft:zombie_spawn_egg",tag:{display:{Name:'{"text":"Zombie","color":"light_purple","italic":false}'}}}}] at @s if entity @p[distance=..2] run kill @s
+
+# execute as @e[type=item,nbt={Item:{id:"minecraft:skeleton_spawn_egg",tag:{display:{Name:'{"text":"Skeleton","color":"light_purple","italic":false}'}}}}] at @s if entity @p[distance=..2] run function practice:drop/skeleton_egg
+# execute as @e[type=item,nbt={Item:{id:"minecraft:skeleton_spawn_egg",tag:{display:{Name:'{"text":"Skeleton","color":"light_purple","italic":false}'}}}}] at @s if entity @p[distance=..2] run kill @s
+
+# execute as @e[type=item,nbt={Item:{id:"minecraft:creeper_spawn_egg",tag:{display:{Name:'{"text":"Creeper","color":"light_purple","italic":false}'}}}}] at @s if entity @p[distance=..2] run function practice:drop/creeper_egg
+# execute as @e[type=item,nbt={Item:{id:"minecraft:creeper_spawn_egg",tag:{display:{Name:'{"text":"Creeper","color":"light_purple","italic":false}'}}}}] at @s if entity @p[distance=..2] run kill @s
+
+# execute as @e[type=item,nbt={Item:{id:"minecraft:spider_spawn_egg",tag:{display:{Name:'{"text":"Spider","color":"light_purple","italic":false}'}}}}] at @s if entity @p[distance=..2] run function practice:drop/spider_egg
+# execute as @e[type=item,nbt={Item:{id:"minecraft:spider_spawn_egg",tag:{display:{Name:'{"text":"Spider","color":"light_purple","italic":false}'}}}}] at @s if entity @p[distance=..2] run kill @s
+
+# execute as @e[type=item,nbt={Item:{id:"minecraft:bat_spawn_egg",tag:{display:{Name:'{"text":"Bat","color":"light_purple","italic":false}'}}}}] at @s if entity @p[distance=..2] run function practice:drop/bat_egg
+# execute as @e[type=item,nbt={Item:{id:"minecraft:bat_spawn_egg",tag:{display:{Name:'{"text":"Bat","color":"light_purple","italic":false}'}}}}] at @s if entity @p[distance=..2] run kill @s
+
+# execute as @e[type=item,nbt={Item:{id:"minecraft:enderman_spawn_egg",tag:{display:{Name:'{"text":"Enderman","color":"light_purple","italic":false}'}}}}] at @s if entity @p[distance=..2] run function practice:drop/enderman_egg
+# execute as @e[type=item,nbt={Item:{id:"minecraft:enderman_spawn_egg",tag:{display:{Name:'{"text":"Enderman","color":"light_purple","italic":false}'}}}}] at @s if entity @p[distance=..2] run kill @s
+
+# execute as @e[type=item,nbt={Item:{id:"minecraft:cave_spider_spawn_egg",tag:{display:{Name:'{"text":"Cave Spider","color":"light_purple","italic":false}'}}}}] at @s if entity @p[distance=..2] run function practice:drop/cave_spider_egg
+# execute as @e[type=item,nbt={Item:{id:"minecraft:cave_spider_spawn_egg",tag:{display:{Name:'{"text":"Cave Spider","color":"light_purple","italic":false}'}}}}] at @s if entity @p[distance=..2] run kill @s
+
+# execute as @e[type=item,nbt={Item:{id:"minecraft:chest_minecart",tag:{display:{Name:'{"text":"Chest Minecart","color":"light_purple","italic":false}'}}}}] at @s if entity @p[distance=..2] run function practice:drop/chest_minecart
+# execute as @e[type=item,nbt={Item:{id:"minecraft:chest_minecart",tag:{display:{Name:'{"text":"Chest Minecart","color":"light_purple","italic":false}'}}}}] at @s if entity @p[distance=..2] run kill @s
 
 # CHEST HOTBAR
 
@@ -200,40 +233,53 @@ execute as @e[type=item,nbt={Item:{tag:{QuizSetting:"overlap"}}}] at @s if score
 execute as @e[type=item,nbt={Item:{tag:{QuizSetting:"overlap"}}}] at @s run kill @s
 
 # Summary
-execute as @e[type=item,nbt={Item:{id:"minecraft:paper",tag:{display:{Name:'{"text":"Summary","color":"yellow","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 5 run function practice:drop/quiz_summary
-execute as @e[type=item,nbt={Item:{id:"minecraft:paper",tag:{display:{Name:'{"text":"Summary","color":"yellow","italic":false}'}}}}] at @s run kill @s
+#execute as @e[type=item,nbt={Item:{id:"minecraft:paper",tag:{display:{Name:'{"text":"Summary","color":"yellow","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 5 run function practice:drop/quiz_summary
+#execute as @e[type=item,nbt={Item:{id:"minecraft:paper",tag:{display:{Name:'{"text":"Summary","color":"yellow","italic":false}'}}}}] at @s run kill @s
 
 # Spawners
 execute as @e[type=item,nbt={Item:{id:"minecraft:spawner",tag:{display:{Name:'{"text":"Spawners","color":"aqua","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 5 run function practice:drop/quiz_settings_spawners
 execute as @e[type=item,nbt={Item:{id:"minecraft:spawner"}}] at @s if score @p[distance=..2] hotbar_index matches 5..9 run kill @s
 
+# T Value
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"T value","color":"white","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 5 run function practice:drop/t_value
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"T value","color":"white","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 17 run kill @s
+
+# More settings
+execute as @e[type=item,nbt={Item:{id:"minecraft:redstone_lamp",tag:{display:{Name:'{"text":"More settings","color":"yellow","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 5 run function practice:drop/more_settings
+execute as @e[type=item,nbt={Item:{id:"minecraft:redstone_lamp",tag:{display:{Name:'{"text":"More settings","color":"yellow","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 18 run kill @s
+
 #Show round result
-# Show correct answer
-execute as @e[type=item,nbt={Item:{id:"minecraft:lime_concrete",tag:{display:{Name:'{"text":"Show round results","color":"green","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 5 run function practice:drop/quiz_round_result
+execute as @e[type=item,nbt={Item:{id:"minecraft:lime_concrete",tag:{display:{Name:'{"text":"Show round results","color":"green","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 18 run function practice:drop/quiz_round_result
 execute as @e[type=item,nbt={Item:{id:"minecraft:lime_concrete",tag:{display:{Name:'{"text":"Show round results","color":"green","italic":false}'}}}}] at @s run kill @s
 
-execute as @e[type=item,nbt={Item:{id:"minecraft:red_terracotta",tag:{display:{Name:'{"text":"Show round results","color":"red","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 5 run function practice:drop/quiz_round_result
+execute as @e[type=item,nbt={Item:{id:"minecraft:red_terracotta",tag:{display:{Name:'{"text":"Show round results","color":"red","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 18 run function practice:drop/quiz_round_result
 execute as @e[type=item,nbt={Item:{id:"minecraft:red_terracotta",tag:{display:{Name:'{"text":"Show round results","color":"red","italic":false}'}}}}] at @s run kill @s
 
 # Show correct answer
-execute as @e[type=item,nbt={Item:{id:"minecraft:lime_concrete",tag:{display:{Name:'{"text":"Show correct answers","color":"green","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 5 run function practice:drop/quiz_correct_answer
+execute as @e[type=item,nbt={Item:{id:"minecraft:lime_concrete",tag:{display:{Name:'{"text":"Show correct answers","color":"green","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 18 run function practice:drop/quiz_correct_answer
 execute as @e[type=item,nbt={Item:{id:"minecraft:lime_concrete",tag:{display:{Name:'{"text":"Show correct answers","color":"green","italic":false}'}}}}] at @s run kill @s
 
-execute as @e[type=item,nbt={Item:{id:"minecraft:red_terracotta",tag:{display:{Name:'{"text":"Show correct answers","color":"red","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 5 run function practice:drop/quiz_correct_answer
+execute as @e[type=item,nbt={Item:{id:"minecraft:red_terracotta",tag:{display:{Name:'{"text":"Show correct answers","color":"red","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 18 run function practice:drop/quiz_correct_answer
 execute as @e[type=item,nbt={Item:{id:"minecraft:red_terracotta",tag:{display:{Name:'{"text":"Show correct answers","color":"red","italic":false}'}}}}] at @s run kill @s
 
 # Dungeon spawn with 2 chests
-execute as @e[type=item,nbt={Item:{id:"minecraft:lime_concrete",tag:{display:{Name:'{"text":"Spawn dungeon chests","color":"green","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 5 run function practice:drop/quiz_dungeon2ch
+execute as @e[type=item,nbt={Item:{id:"minecraft:lime_concrete",tag:{display:{Name:'{"text":"Spawn dungeon chests","color":"green","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 18 run function practice:drop/quiz_dungeon2ch
 execute as @e[type=item,nbt={Item:{id:"minecraft:lime_concrete",tag:{display:{Name:'{"text":"Spawn dungeon chests","color":"green","italic":false}'}}}}] at @s run kill @s
 
-execute as @e[type=item,nbt={Item:{id:"minecraft:red_terracotta",tag:{display:{Name:'{"text":"Spawn dungeon chests","color":"red","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 5 run function practice:drop/quiz_dungeon2ch
+execute as @e[type=item,nbt={Item:{id:"minecraft:red_terracotta",tag:{display:{Name:'{"text":"Spawn dungeon chests","color":"red","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 18 run function practice:drop/quiz_dungeon2ch
 execute as @e[type=item,nbt={Item:{id:"minecraft:red_terracotta",tag:{display:{Name:'{"text":"Spawn dungeon chests","color":"red","italic":false}'}}}}] at @s run kill @s
+
+# Spawn entities
+execute as @e[type=item,nbt={Item:{id:"minecraft:lime_concrete",tag:{display:{Name:'{"text":"Spawn entities","color":"green","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 18 run function practice:drop/quiz_spawn_entities
+execute as @e[type=item,nbt={Item:{id:"minecraft:lime_concrete",tag:{display:{Name:'{"text":"Spawn entities","color":"green","italic":false}'}}}}] at @s run kill @s
+
+execute as @e[type=item,nbt={Item:{id:"minecraft:red_terracotta",tag:{display:{Name:'{"text":"Spawn entities","color":"red","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 18 run function practice:drop/quiz_spawn_entities
+execute as @e[type=item,nbt={Item:{id:"minecraft:red_terracotta",tag:{display:{Name:'{"text":"Spawn entities","color":"red","italic":false}'}}}}] at @s run kill @s
 
 
 # Back
 #execute as @e[type=item,nbt={Item:{id:"minecraft:black_banner",tag:{display:{Name:'{"text":"Back","color":"gray","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 5 run function practice:drop/back
 #execute as @e[type=item,nbt={Item:{id:"minecraft:black_banner",tag:{display:{Name:'{"text":"Back","color":"gray","italic":false}'}}}}] at @s run kill @s
-
 
 # QUIZ ROUNDS HOTBAR
 
@@ -303,10 +349,10 @@ execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name
 
 
 # QUIZ SUMMARY
-execute as @e[type=item,nbt={Item:{id:"minecraft:lime_concrete",tag:{display:{Name:'{"text":"Show summary","color":"green","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 5 run function practice:drop/quiz_summary_state
+execute as @e[type=item,nbt={Item:{id:"minecraft:lime_concrete",tag:{display:{Name:'{"text":"Show summary","color":"green","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 18 run function practice:drop/quiz_summary_state
 execute as @e[type=item,nbt={Item:{id:"minecraft:lime_concrete",tag:{display:{Name:'{"text":"Show summary","color":"green","italic":false}'}}}}] at @s run kill @s
 
-execute as @e[type=item,nbt={Item:{id:"minecraft:red_terracotta",tag:{display:{Name:'{"text":"Show summary","color":"red","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 5 run function practice:drop/quiz_summary_state
+execute as @e[type=item,nbt={Item:{id:"minecraft:red_terracotta",tag:{display:{Name:'{"text":"Show summary","color":"red","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 18 run function practice:drop/quiz_summary_state
 execute as @e[type=item,nbt={Item:{id:"minecraft:red_terracotta",tag:{display:{Name:'{"text":"Show summary","color":"red","italic":false}'}}}}] at @s run kill @s
 
 
@@ -342,21 +388,29 @@ execute as @a[scores={hotbar_index=11}] run function practice:hotbar/chest_layer
 execute as @a[scores={hotbar_index=13}] run function practice:hotbar/quiz_overlap
 execute as @a[scores={hotbar_index=14}] run function practice:hotbar/entities
 execute as @a[scores={hotbar_index=15}] run function practice:hotbar/t_value
+execute as @a[scores={hotbar_index=16}] run function practice:hotbar/numbers_entities
+execute as @a[scores={hotbar_index=17}] run function practice:hotbar/quiz_t_value
+execute as @a[scores={hotbar_index=18}] run function practice:hotbar/quiz_settings2
 execute as @a[scores={hotbar_index=99}] run function practice:hotbar/loading
 
 #during spikecheck
 execute as @a[scores={hotbar_index=1..3}] run function practice:place_starterstaircase
 execute as @a[scores={hotbar_index=10..12}] run function practice:place_starterstaircase
-execute as @a[scores={hotbar_index=14..15}] run function practice:place_starterstaircase
+execute as @a[scores={hotbar_index=14..16}] run function practice:place_starterstaircase
 
 execute as @a[scores={hotbar_index=1..3}] run execute if score #t_value_fluctuate t_value matches 1 run function practice:ws_tvalue_fluctuate
 execute as @a[scores={hotbar_index=10..12}] run execute if score #t_value_fluctuate t_value matches 1 run function practice:ws_tvalue_fluctuate
-execute as @a[scores={hotbar_index=14..15}] run execute if score #t_value_fluctuate t_value matches 1 run function practice:ws_tvalue_fluctuate
+execute as @a[scores={hotbar_index=14..16}] run execute if score #t_value_fluctuate t_value matches 1 run function practice:ws_tvalue_fluctuate
 
 
 #during spikequiz
 execute as @a[scores={hotbar_index=4..9}] run function practice:place_starterstaircase_quiz
 execute as @a[scores={hotbar_index=13}] run function practice:place_starterstaircase_quiz
+execute as @a[scores={hotbar_index=17..18}] run function practice:place_starterstaircase_quiz
+
+execute as @a[scores={hotbar_index=4..9}] run execute if score #qt_value_fluctuate t_value matches 1 run function practice:q_tvalue_fluctuate
+execute as @a[scores={hotbar_index=13}] run execute if score #qt_value_fluctuate t_value matches 1 run function practice:q_tvalue_fluctuate
+execute as @a[scores={hotbar_index=17..18}] run execute if score #qt_value_fluctuate t_value matches 1 run function practice:q_tvalue_fluctuate
 
 #during lobby
 execute as @a[scores={hotbar_index=0}] run function practice:place_lobby
@@ -385,6 +439,15 @@ execute as @a[scores={actionbar=17}] run title @s actionbar {"text":"Mob spawner
 execute as @a[scores={actionbar=18}] run title @s actionbar {"text":"Settings/Overlapping spikes","color":"dark_aqua"}
 execute as @a[scores={actionbar=19}] run title @s actionbar {"text":"Entities","color":"light_purple"}
 execute as @a[scores={actionbar=20}] run title @s actionbar [{"text":"T: ","color":"white"}, {"score":{"name":"#t_value","objective":"t_value"},"color":"white"}]
+execute as @a[scores={actionbar=21}] run title @s actionbar {"text":"Entities/Zombie","color":"light_purple"}
+execute as @a[scores={actionbar=22}] run title @s actionbar {"text":"Entities/Skeleton","color":"light_purple"}
+execute as @a[scores={actionbar=23}] run title @s actionbar {"text":"Entities/Creeper","color":"light_purple"}
+execute as @a[scores={actionbar=24}] run title @s actionbar {"text":"Entities/Spider","color":"light_purple"}
+execute as @a[scores={actionbar=25}] run title @s actionbar {"text":"Entities/Bat","color":"light_purple"}
+execute as @a[scores={actionbar=26}] run title @s actionbar {"text":"Entities/Enderman","color":"light_purple"}
+execute as @a[scores={actionbar=27}] run title @s actionbar {"text":"Entities/Cave Spider","color":"light_purple"}
+execute as @a[scores={actionbar=28}] run title @s actionbar {"text":"Entities/Chest Minecart","color":"light_purple"}
+execute as @a[scores={actionbar=29}] run title @s actionbar [{"text":"T: ","color":"white"}, {"score":{"name":"#qt_value","objective":"t_value"},"color":"white"}]
 
 #checks
 scoreboard players set @a sneak_check 0

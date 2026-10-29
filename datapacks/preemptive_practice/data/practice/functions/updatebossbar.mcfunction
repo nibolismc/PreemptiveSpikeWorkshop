@@ -76,7 +76,48 @@ execute if score @p chests_behind matches 6 run team modify ws_behind suffix {"t
 execute if score @p chests_behind matches 7 run team modify ws_behind suffix {"text":" 7","color":"white"}
 execute if score @p chests_behind matches 8 run team modify ws_behind suffix {"text":" 8","color":"white"}
 
-#maximum amount of spawners (shown in the whole quiz menu, hidden during the quiz)
+#entities
+execute if score @p zombie_count matches 0 run execute as @a run scoreboard players reset Zombies: workshop_sb
+execute if score @p zombie_count matches 1 run team modify ws_entity1 suffix {"text":" 1","color":"white"}
+execute if score @p zombie_count matches 2 run team modify ws_entity1 suffix {"text":" 2","color":"white"}
+execute if score @p zombie_count matches 3 run team modify ws_entity1 suffix {"text":" 3","color":"white"}
+
+execute if score @p skeleton_count matches 0 run execute as @a run scoreboard players reset Skeletons: workshop_sb
+execute if score @p skeleton_count matches 1 run team modify ws_entity2 suffix {"text":" 1","color":"white"}
+execute if score @p skeleton_count matches 2 run team modify ws_entity2 suffix {"text":" 2","color":"white"}
+execute if score @p skeleton_count matches 3 run team modify ws_entity2 suffix {"text":" 3","color":"white"}
+
+execute if score @p creeper_count matches 0 run execute as @a run scoreboard players reset Creepers: workshop_sb
+execute if score @p creeper_count matches 1 run team modify ws_entity3 suffix {"text":" 1","color":"white"}
+execute if score @p creeper_count matches 2 run team modify ws_entity3 suffix {"text":" 2","color":"white"}
+execute if score @p creeper_count matches 3 run team modify ws_entity3 suffix {"text":" 3","color":"white"}
+
+execute if score @p spider_count matches 0 run execute as @a run scoreboard players reset Spiders: workshop_sb
+execute if score @p spider_count matches 1 run team modify ws_entity4 suffix {"text":" 1","color":"white"}
+execute if score @p spider_count matches 2 run team modify ws_entity4 suffix {"text":" 2","color":"white"}
+execute if score @p spider_count matches 3 run team modify ws_entity4 suffix {"text":" 3","color":"white"}
+
+execute if score @p bat_count matches 0 run execute as @a run scoreboard players reset Bats: workshop_sb
+execute if score @p bat_count matches 1 run team modify ws_entity5 suffix {"text":" 1","color":"white"}
+execute if score @p bat_count matches 2 run team modify ws_entity5 suffix {"text":" 2","color":"white"}
+execute if score @p bat_count matches 3 run team modify ws_entity5 suffix {"text":" 3","color":"white"}
+
+execute if score @p enderman_count matches 0 run execute as @a run scoreboard players reset Endermen: workshop_sb
+execute if score @p enderman_count matches 1 run team modify ws_entity6 suffix {"text":" 1","color":"white"}
+execute if score @p enderman_count matches 2 run team modify ws_entity6 suffix {"text":" 2","color":"white"}
+execute if score @p enderman_count matches 3 run team modify ws_entity6 suffix {"text":" 3","color":"white"}
+
+execute if score @p cave_s_count matches 0 run execute as @a run scoreboard players reset piders: workshop_sb
+execute if score @p cave_s_count matches 1 run team modify ws_entity7 suffix {"text":" 1","color":"white"}
+execute if score @p cave_s_count matches 2 run team modify ws_entity7 suffix {"text":" 2","color":"white"}
+execute if score @p cave_s_count matches 3 run team modify ws_entity7 suffix {"text":" 3","color":"white"}
+
+execute if score @p minecart_count matches 0 run execute as @a run scoreboard players reset Minecarts: workshop_sb
+execute if score @p minecart_count matches 1 run team modify ws_entity8 suffix {"text":" 1","color":"white"}
+execute if score @p minecart_count matches 2 run team modify ws_entity8 suffix {"text":" 2","color":"white"}
+execute if score @p minecart_count matches 3 run team modify ws_entity8 suffix {"text":" 3","color":"white"}
+
+#maximum amount of spawners
 execute if entity @a[scores={hotbar_index=4..8}] run bossbar set practice:overlap name [{"text":"Maximum amount of spawners: ","color":"dark_aqua"},{"score":{"name":"#spikes","objective":"quiz_cfg"},"color":"white"}]
 execute if entity @a[scores={hotbar_index=13}] run bossbar set practice:overlap name [{"text":"Maximum amount of spawners: ","color":"dark_aqua"},{"score":{"name":"#spikes","objective":"quiz_cfg"},"color":"white"}]
 execute if entity @a[scores={hotbar_index=4..8}] store result bossbar practice:overlap value run scoreboard players get #spikes quiz_cfg

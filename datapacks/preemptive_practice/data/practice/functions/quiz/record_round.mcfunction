@@ -12,6 +12,7 @@ data modify storage practice:quiz new.sp_txt set from storage practice:quiz cur.
 data modify storage practice:quiz new.sp2_txt set from storage practice:quiz cur.s2
 data modify storage practice:quiz new.sp3_txt set from storage practice:quiz cur.s3
 
+execute store result storage practice:quiz new.t int 1 run scoreboard players get #qt_value t_value
 execute store result storage practice:quiz new.spikes int 1 run scoreboard players get #spikes quiz_cfg
 execute store result storage practice:quiz new.b1 int 1 run scoreboard players get @p quiz_b1_idx
 execute store result storage practice:quiz new.b2 int 1 run scoreboard players get @p quiz_b2_idx

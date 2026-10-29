@@ -1,5 +1,6 @@
 scoreboard objectives add const dummy
 scoreboard players set #-1 const -1
+scoreboard players set #10 const 10
 
 scoreboard objectives add hotbar_index dummy
 scoreboard players set @a hotbar_index 0
@@ -29,6 +30,10 @@ scoreboard objectives add chest_index dummy
 #spawner index
 scoreboard objectives add spawner_index dummy
 scoreboard players set @a spawner_index 1
+
+#spawnegg index
+scoreboard objectives add spawnegg_index dummy
+scoreboard players set @a spawnegg_index 1
 
 #rounds
 scoreboard objectives add number_of_rounds dummy
@@ -117,6 +122,12 @@ scoreboard players set #state corr_answer 1
 #dungeons spawn with 2 chests
 scoreboard players set #force_2_ch quiz_tmp 1
 
+#spawn entities
+scoreboard objectives add quiz_entities dummy
+scoreboard players set #state quiz_entities 0
+
+
+
 #random
 scoreboard objectives add random dummy
 scoreboard players set #multiplier random 25173
@@ -146,13 +157,69 @@ scoreboard players set #t_value t_value 70
 scoreboard players set #t_value_diff t_value 0
 scoreboard players set #t_value_tmp t_value 0
 
+scoreboard players set #qt_value t_value 70
+scoreboard players set #qt_value_diff t_value 0
+scoreboard players set #qt_value_tmp t_value 0
+
 function practice:drop/tval_70
 
 scoreboard players set #t_value_fluctuate t_value 0
 
+scoreboard players set #qt_value_fluctuate t_value 0
+scoreboard players set #qt_value_randomize t_value 0
+
+
+#Entities
+scoreboard objectives add zombie_count dummy
+scoreboard players set @a zombie_count 0
+scoreboard objectives add skeleton_count dummy
+scoreboard players set @a skeleton_count 0
+scoreboard objectives add creeper_count dummy
+scoreboard players set @a creeper_count 0
+scoreboard objectives add spider_count dummy
+scoreboard players set @a spider_count 0
+scoreboard objectives add bat_count dummy
+scoreboard players set @a bat_count 0
+scoreboard objectives add enderman_count dummy
+scoreboard players set @a enderman_count 0
+scoreboard objectives add cave_s_count dummy
+scoreboard players set @a cave_s_count 0
+scoreboard objectives add minecart_count dummy
+scoreboard players set @a minecart_count 0
+
 #Scoreboard
 scoreboard objectives remove workshop_sb
 scoreboard objectives add workshop_sb dummy {"text":"----Configuration----","color":"green"}
+
+team add ws_entity1
+team add ws_entity2
+team add ws_entity3
+team add ws_entity4
+team add ws_entity5
+team add ws_entity6
+team add ws_entity7
+team add ws_entity8
+
+team modify ws_entity1 color gray
+team modify ws_entity2 color gray
+team modify ws_entity3 color gray
+team modify ws_entity4 color gray
+team modify ws_entity5 color gray
+team modify ws_entity6 color gray
+team modify ws_entity7 color gray
+team modify ws_entity8 color gray
+
+team join ws_entity1 Zombies:
+team join ws_entity2 Skeletons:
+team join ws_entity3 Creepers:
+team join ws_entity4 Spiders:
+team join ws_entity5 Bats:
+team join ws_entity6 Endermen:
+team join ws_entity7 piders:
+team modify ws_entity7 prefix {"text":"Cave S","color":"gray"}
+team join ws_entity8 Minecarts:
+team modify ws_entity8 prefix {"text":"Chest ","color":"gray"}
+
 
 team add ws_spawner1
 team add ws_spawner2

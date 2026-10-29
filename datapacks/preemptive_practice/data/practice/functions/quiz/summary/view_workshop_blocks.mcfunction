@@ -55,6 +55,12 @@ execute if score #vn quiz_sum matches 3 if score #vsp3 quiz_sum matches 4 run fu
 execute if score #vn quiz_sum matches 3 if score #vsp3 quiz_sum matches 5 run function practice:drop/none
 execute unless score #vn quiz_sum matches 3 run function practice:drop/none
 
+# T value of the round (workshop cows)
+execute if score #vt quiz_sum matches 1.. run scoreboard players operation #t_value_diff t_value = #vt quiz_sum
+execute if score #vt quiz_sum matches 1.. run scoreboard players remove #t_value_diff t_value 1
+execute if score #vt quiz_sum matches 1.. run function practice:ws_remove_all_cows
+execute if score #vt quiz_sum matches 1.. run function practice:ws_update_tvalue
+
 # cleanup
 stopsound @a player minecraft:block.lever.click
 stopsound @a player minecraft:entity.item.pickup
