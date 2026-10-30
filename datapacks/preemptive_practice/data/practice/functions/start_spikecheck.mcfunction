@@ -20,3 +20,5 @@ bossbar set practice:overlap visible false
 scoreboard objectives setdisplay sidebar workshop_sb
 
 function practice:updatebossbar
+
+gamemode survival @a

@@ -23,3 +23,5 @@ bossbar set practice:overlap visible true
 scoreboard objectives setdisplay sidebar
 
 function practice:updatebossbar
+
+gamemode survival @a

@@ -33,3 +33,5 @@ bossbar set practice:chests_behind players @a
 bossbar set practice:number_of_rounds players @a
 bossbar set practice:round players @a
 bossbar set practice:overlap players @a
+
+gamemode adventure @a

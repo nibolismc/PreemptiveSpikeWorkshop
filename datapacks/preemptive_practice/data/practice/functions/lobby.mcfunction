@@ -21,3 +21,5 @@ bossbar set practice:number_of_rounds players @a
 bossbar set practice:round players @a
 
 scoreboard objectives setdisplay sidebar
+
+gamemode adventure @a
