@@ -370,6 +370,29 @@ execute as @e[type=item,nbt={Item:{id:"minecraft:red_banner",tag:{display:{Name:
 execute as @e[type=item,nbt={Item:{id:"minecraft:red_banner",tag:{display:{Name:'{"text":"Quit","color":"red","italic":false}'}}}}] at @s run kill @s
 
 
+# SPREADSHEET DEFAULT
+
+# Start
+execute as @e[type=item,nbt={Item:{id:"minecraft:lime_concrete",tag:{display:{Name:'{"text":"Start","color":"green","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 19 run function practice:drop/spreadsheet_start
+execute as @e[type=item,nbt={Item:{id:"minecraft:lime_concrete",tag:{display:{Name:'{"text":"Start","color":"green","italic":false}'}}}}] at @s run kill @s
+
+#T value
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"T value","color":"white","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 19 run function practice:drop/t_value
+execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:'{"text":"T value","color":"white","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 20 run kill @s
+
+#Default
+execute as @e[type=item,nbt={Item:{id:"minecraft:note_block",tag:{display:{Name:'{"text":"Default","color":"red","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 19 run function practice:drop/conf_def
+execute as @e[type=item,nbt={Item:{id:"minecraft:note_block",tag:{display:{Name:'{"text":"Default","color":"red","italic":false}'}}}}] at @s run kill @s
+
+#Overlapping spikes #1
+execute as @e[type=item,nbt={Item:{id:"minecraft:note_block",tag:{display:{Name:'{"text":"Overlapping spikes #1","color":"red","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 19 run function practice:drop/conf_os1
+execute as @e[type=item,nbt={Item:{id:"minecraft:note_block",tag:{display:{Name:'{"text":"Overlapping spikes #1","color":"red","italic":false}'}}}}] at @s run kill @s
+
+#Overlapping spikes #2
+execute as @e[type=item,nbt={Item:{id:"minecraft:note_block",tag:{display:{Name:'{"text":"Overlapping spikes #2","color":"red","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 19 run function practice:drop/conf_os2
+execute as @e[type=item,nbt={Item:{id:"minecraft:note_block",tag:{display:{Name:'{"text":"Overlapping spikes #2","color":"red","italic":false}'}}}}] at @s run kill @s
+
+
 #HOTBAR INDEX
 
 execute as @a[scores={hotbar_index=0}] run function practice:hotbar/empty
@@ -390,6 +413,8 @@ execute as @a[scores={hotbar_index=15}] run function practice:hotbar/t_value
 execute as @a[scores={hotbar_index=16}] run function practice:hotbar/numbers_entities
 execute as @a[scores={hotbar_index=17}] run function practice:hotbar/quiz_t_value
 execute as @a[scores={hotbar_index=18}] run function practice:hotbar/quiz_settings2
+execute as @a[scores={hotbar_index=19}] run function practice:hotbar/spreadsheet_default
+execute as @a[scores={hotbar_index=20}] run function practice:hotbar/sc_t_value
 execute as @a[scores={hotbar_index=99}] run function practice:hotbar/loading
 
 #during spikecheck
@@ -410,6 +435,11 @@ execute as @a[scores={hotbar_index=17..18}] run function practice:place_starters
 execute as @a[scores={hotbar_index=4..9}] run execute if score #qt_value_fluctuate t_value matches 1 run function practice:q_tvalue_fluctuate
 execute as @a[scores={hotbar_index=13}] run execute if score #qt_value_fluctuate t_value matches 1 run function practice:q_tvalue_fluctuate
 execute as @a[scores={hotbar_index=17..18}] run execute if score #qt_value_fluctuate t_value matches 1 run function practice:q_tvalue_fluctuate
+
+#during spreadsheet creator
+execute as @a[scores={hotbar_index=19}] run function practice:place_starterstaircase_sc
+
+execute as @a[scores={hotbar_index=19}] run execute if score #qt_value_fluctuate t_value matches 1 run function practice:sc_tvalue_fluctuate
 
 #during lobby
 execute as @a[scores={hotbar_index=0}] run function practice:place_lobby
@@ -447,6 +477,8 @@ execute as @a[scores={actionbar=26}] run title @s actionbar {"text":"Entities/En
 execute as @a[scores={actionbar=27}] run title @s actionbar {"text":"Entities/Cave Spider","color":"light_purple"}
 execute as @a[scores={actionbar=28}] run title @s actionbar {"text":"Entities/Chest Minecart","color":"light_purple"}
 execute as @a[scores={actionbar=29}] run title @s actionbar [{"text":"T: ","color":"white"}, {"score":{"name":"#qt_value","objective":"t_value"},"color":"white"}]
+execute as @a[scores={actionbar=30}] run title @s actionbar [{"text":"Spreadsheet Creator","color":"light_purple"}]
+execute as @a[scores={actionbar=31}] run title @s actionbar [{"text":"T: ","color":"white"}, {"score":{"name":"#sct_value","objective":"t_value"},"color":"white"}]
 
 #checks
 scoreboard players set @a sneak_check 0

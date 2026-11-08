@@ -1,0 +1,18 @@
+replaceitem entity @s hotbar.0 minecraft:lime_concrete{display:{Name:'{"text":"Start","color":"green","italic":false}'}} 1
+replaceitem entity @a hotbar.1 minecraft:player_head{display:{Name:'{"text":"T value","color":"white","italic":false}',Lore:[ '{"text":""}', '{"text":"Edit the total number of entities","color":"white","italic":true}']},SkullOwner:{Id:[I;531,631,731,831],Name:"White_T",Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTNmYjUwZmU3NTU5YmM5OWYxM2M0NzM1NmNjZTk3ZmRhM2FhOTIzNTU3ZmI1YmZiMTdjODI1YWJmNGIxZDE5In19fQ=="}]}}}
+replaceitem entity @a hotbar.2 minecraft:air 1
+
+execute if score #index sc_conf matches 1 run replaceitem entity @a hotbar.3 minecraft:note_block{Enchantments:[{id:"minecraft:unbreaking",lvl:1s}],HideFlags:1,display:{Name:'{"text":"Default","color":"green","italic":false}',Lore:['{"text":""}','{"text":"All spikes with,","color":"white","italic":true}','{"text":"1 spawner or less","color":"white","italic":true}']}} 1
+execute unless score #index sc_conf matches 1 run replaceitem entity @a hotbar.3 minecraft:note_block{display:{Name:'{"text":"Default","color":"red","italic":false}',Lore:['{"text":""}','{"text":"All spikes with,","color":"white","italic":true}','{"text":"1 spawner or less","color":"white","italic":true}']}} 1
+
+execute if score #index sc_conf matches 2 run replaceitem entity @a hotbar.4 minecraft:note_block{Enchantments:[{id:"minecraft:unbreaking",lvl:1s}],HideFlags:1,display:{Name:'{"text":"Overlapping spikes #1","color":"green","italic":false}',Lore:['{"text":""}','{"text":"All spikes with","color":"white","bold":false,"underlined":false,"italic":true}','{"text":"1 spawner or less","color":"white","bold":false,"underlined":false,"italic":true}','{"text":"+ real 2-spawner-spikes","color":"white","bold":false,"underlined":false,"italic":true}']}} 1
+execute unless score #index sc_conf matches 2 run replaceitem entity @a hotbar.4 minecraft:note_block{display:{Name:'{"text":"Overlapping spikes #1","color":"red","italic":false}',Lore:['{"text":""}','{"text":"All spikes with","color":"white","bold":false,"underlined":false,"italic":true}','{"text":"1 spawner or less","color":"white","bold":false,"underlined":false,"italic":true}','{"text":"+ real 2-spawner-spikes","color":"white","bold":false,"underlined":false,"italic":true}']}} 1
+
+execute if score #index sc_conf matches 3 run replaceitem entity @a hotbar.5 minecraft:note_block{Enchantments:[{id:"minecraft:unbreaking",lvl:1s}],HideFlags:1,display:{Name:'{"text":"Overlapping spikes #2","color":"green","italic":false}',Lore:['{"text":""}','{"text":"All spikes with","color":"white","italic":true}','{"text":"2 spawners or less","color":"white","italic":true}','{"text":"(real and fake)","color":"white","italic":true}']}} 1
+execute unless score #index sc_conf matches 3 run replaceitem entity @a hotbar.5 minecraft:note_block{display:{Name:'{"text":"Overlapping spikes #2","color":"red","italic":false}',Lore:['{"text":""}','{"text":"All spikes with","color":"white","italic":true}','{"text":"2 spawners or less","color":"white","italic":true}','{"text":"(real and fake)","color":"white","italic":true}']}} 1
+
+replaceitem entity @a hotbar.6 minecraft:air 1
+replaceitem entity @a hotbar.7 minecraft:book{display:{Name:'{"text":"Drop for info","color":"light_purple","italic":false}'},Enchantments:[{id:"minecraft:binding_curse",lvl:1s}],HideFlags:1} 1
+replaceitem entity @a hotbar.8 minecraft:oak_door{display:{Name:'{"text":"Exit","color":"red","italic":false}'}} 1
+
+scoreboard players set @a actionbar 30

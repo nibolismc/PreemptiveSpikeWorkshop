@@ -126,6 +126,9 @@ scoreboard players set #force_2_ch quiz_tmp 1
 scoreboard objectives add quiz_entities dummy
 scoreboard players set #state quiz_entities 0
 
+#spreadsheet configuration
+scoreboard objectives add sc_conf dummy
+scoreboard players set #index sc_conf 1
 
 
 #random
@@ -160,6 +163,10 @@ scoreboard players set #t_value_tmp t_value 0
 scoreboard players set #qt_value t_value 70
 scoreboard players set #qt_value_diff t_value 0
 scoreboard players set #qt_value_tmp t_value 0
+
+scoreboard players set #sct_value t_value 70
+scoreboard players set #sct_value_diff t_value 0
+scoreboard players set #sct_value_tmp t_value 0
 
 function practice:drop/tval_70
 

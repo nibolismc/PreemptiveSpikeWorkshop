@@ -6,8 +6,6 @@ function practice:quiz/reset_round
 
 scoreboard players set @a chest_index 0
 
-gamemode survival @a
-
 #bossbar
 bossbar set practice:number_of_rounds players @a
 bossbar set practice:round players @a

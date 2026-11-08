@@ -12,4 +12,7 @@ execute as @a[scores={hotbar_index=15}] run function practice:ws_update_tvalue
 execute as @a[scores={hotbar_index=17}] run scoreboard players set #qt_value_diff t_value -10
 execute as @a[scores={hotbar_index=17}] run function practice:q_update_tvalue
 
+execute as @a[scores={hotbar_index=20}] run scoreboard players set #sct_value_diff t_value -10
+execute as @a[scores={hotbar_index=20}] run function practice:sc_update_tvalue
+
 function practice:updatebossbar
