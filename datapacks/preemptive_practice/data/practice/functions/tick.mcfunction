@@ -207,7 +207,7 @@ execute as @e[type=item,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name
 
 # Start
 execute as @e[type=item,nbt={Item:{id:"minecraft:lime_concrete",tag:{display:{Name:'{"text":"Start","color":"green","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 4 run function practice:drop/quiz_start
-execute as @e[type=item,nbt={Item:{id:"minecraft:lime_concrete",tag:{display:{Name:'{"text":"Start","color":"green","italic":false}'}}}}] at @s run kill @s
+execute as @e[type=item,nbt={Item:{id:"minecraft:lime_concrete",tag:{display:{Name:'{"text":"Start","color":"green","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 4 run kill @s
 
 # Settings
 execute as @e[type=item,nbt={Item:{id:"minecraft:hopper_minecart",tag:{display:{Name:'{"text":"Settings","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 4 run function practice:drop/quiz_settings
@@ -392,6 +392,9 @@ execute as @e[type=item,nbt={Item:{id:"minecraft:note_block",tag:{display:{Name:
 execute as @e[type=item,nbt={Item:{id:"minecraft:note_block",tag:{display:{Name:'{"text":"Overlapping spikes #2","color":"red","italic":false}'}}}}] at @s if score @p[distance=..2] hotbar_index matches 19 run function practice:drop/conf_os2
 execute as @e[type=item,nbt={Item:{id:"minecraft:note_block",tag:{display:{Name:'{"text":"Overlapping spikes #2","color":"red","italic":false}'}}}}] at @s run kill @s
 
+#Drop for info
+execute as @e[type=item,nbt={Item:{id:"minecraft:book"}}] at @s if score @p[distance=..2] hotbar_index matches 19 run function practice:drop/info
+execute as @e[type=item,nbt={Item:{id:"minecraft:book"}}] at @s if score @p[distance=..2] hotbar_index matches 19 run kill @s
 
 #HOTBAR INDEX
 
@@ -415,6 +418,7 @@ execute as @a[scores={hotbar_index=17}] run function practice:hotbar/quiz_t_valu
 execute as @a[scores={hotbar_index=18}] run function practice:hotbar/quiz_settings2
 execute as @a[scores={hotbar_index=19}] run function practice:hotbar/spreadsheet_default
 execute as @a[scores={hotbar_index=20}] run function practice:hotbar/sc_t_value
+function practice:sc/tick
 execute as @a[scores={hotbar_index=99}] run function practice:hotbar/loading
 
 #during spikecheck
@@ -437,9 +441,7 @@ execute as @a[scores={hotbar_index=13}] run execute if score #qt_value_fluctuate
 execute as @a[scores={hotbar_index=17..18}] run execute if score #qt_value_fluctuate t_value matches 1 run function practice:q_tvalue_fluctuate
 
 #during spreadsheet creator
-execute as @a[scores={hotbar_index=19}] run function practice:place_starterstaircase_sc
-
-execute as @a[scores={hotbar_index=19}] run execute if score #qt_value_fluctuate t_value matches 1 run function practice:sc_tvalue_fluctuate
+execute as @a[scores={hotbar_index=19..21}] run function practice:place_starterstaircase_sc
 
 #during lobby
 execute as @a[scores={hotbar_index=0}] run function practice:place_lobby

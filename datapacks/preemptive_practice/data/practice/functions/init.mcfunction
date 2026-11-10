@@ -300,4 +300,6 @@ bossbar set practice:overlap visible false
 
 function practice:updatebossbar
 
+function practice:sc/init
+
 scoreboard players set #version const 1

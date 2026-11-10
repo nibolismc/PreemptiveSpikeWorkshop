@@ -17,6 +17,10 @@ bossbar set practice:overlap visible false
 
 scoreboard objectives setdisplay sidebar
 
+# clean start: remove everything a previous run left in the spreadsheet section
+function practice:sc/clear_blocks
+function practice:sc/sb_clear
+
 function practice:updatebossbar
 
 gamemode survival @a
